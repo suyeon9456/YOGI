@@ -1,0 +1,296 @@
+@charset "EUC-KR";
+
+a{
+	text-decoration: none;
+}
+
+/*main_header-------------------------------------------------------------------------------------- */
+#main_header{
+	box-sizing: border-box;
+	vertical-align: bottom;
+	height: 100vh;
+	position: static;
+}
+
+#main_header img{
+	width:100%;
+	height: 100%;
+	object-fit:cover;
+	vertical-align: bottom;
+}
+
+#main_header #find_b{
+	top:50%;
+	transform:translateY(-50%);
+    width: 100%;
+	position: absolute;
+}
+
+#main_header #top_box{
+	height:80px;
+	width: 100%;
+	position:absolute;
+	top:0;
+	left:0;	
+}
+
+#main_header #top_box #logo{
+	display: inline-block;
+}
+
+#main_header #top_box #top_menu{
+	display:inline-block;
+	width:400px;
+	height:80px;
+	position: absolute;
+	top:0;
+	right:0;
+	margin:0 auto;
+	text-align: right;
+}
+
+#main_header #top_box #top_menu ul{
+	list-style: none;
+	font-size: 15px;
+	font-weight: bold;
+	color:white;
+}
+
+#main_header #top_box #top_menu ul li{
+	float: left;
+	margin:20px;
+}
+#main_header #top_box #top_menu ul li a{	
+	color:white;	
+}
+#main_header #find_box{
+	display:inline-block;
+	position:relative;
+	left:70px;
+	top:0px;
+	width:400px;
+	height:500px;
+	background-color:white;
+	border-radius: 3px;
+	padding-left:20px;
+	box-shadow: 16px 40px rgba(0,0,0,0.12);
+	z-index: 100;
+}
+
+#main_header #find_box h1{
+	color:#2d2d2d;
+}
+
+#main_header #find_box label{
+	display:inline-block;
+	width: 192px;
+	margin-top: 25px;
+	margin-bottom:10px;
+	font-size: 13px;
+}
+
+#main_header #find_box input{
+	height: 35px;
+}
+
+#main_header #find_box input[type=date]{
+	width: 181px;
+}
+
+#main_header #find_box #btn_find{
+	background-color:#ff5a5f;	
+	border: 0px solid #ccc;
+	color:white;
+	font-size: 15px;
+	font-weight:bold;
+	border-radius: 3px;
+	width: 75px;
+	height: 35px;
+	margin-top: 20px;
+}
+
+/*main_content-------------------------------------------------------------------------------------- */
+#main_content{
+	box-sizing: border-box;
+	height: auto;
+	width: 100%;
+	margin:0 auto;
+	text-align: center;
+}
+
+#main_content .content_title{
+	height:80px;
+	margin:0 auto;
+	text-align: center;
+	margin-top:50px;
+}
+
+#main_content h2{
+	display:inline-block;
+	width:90%;
+	color:#2d2d2d;
+	text-align: left;
+}
+
+#main_content #find_type{
+	width:90%;
+	margin:0 auto;
+	text-align:center;
+}
+
+#main_content #find_type #find_type_buttons{
+	margin-bottom:60px;	
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-content: space-around;
+}
+
+#main_content #find_type #find_type_buttons .find_box{
+	width: 240px;
+	text-decoration: none;
+	border-radius: 10px;
+	color:#484848;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#main_content #find_type #find_type_buttons .find_box img{
+	border-radius: 10px;
+}
+
+#main_content #find_type #find_type_buttons .find_box div{
+	flex-basis : 240px;
+	height:40px;
+	border-radius: 10px;
+	line-height: 40px;
+}
+
+#main_content #find_house{
+	margin:0 auto;
+	text-align: center;
+}
+
+
+#main_content #find_house #banner_box{
+	margin:0 auto;
+	border-radius: 10px 10px;
+	width:90%;
+	height:400px;
+	background-image: url("../img/main/banner4.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	text-align: center;
+}
+
+#main_content #find_house #banner_box #banner_vertical{
+	display:table;
+	width: inherit;
+	height: inherit;
+	margin:0 auto;
+	text-align: center;
+}
+
+#main_content #find_house #banner_box #banner_box_content{
+	display: table-cell;
+	width:80%;
+	margin:0 auto;
+	vertical-align:middle;
+}
+
+#main_content #find_house #banner_box #banner_title{
+	font-weight:bold;
+	color:#5A4F3F;
+	font-size:30px;
+}
+
+
+#main_content #find_house #banner_box #banner_title h1{
+	font-size: 1.5em;
+	margin-top:0;
+	
+}
+
+#main_content #find_house #banner_box #c_find_button{
+	display: inline-block;
+	border-radius:50px 50px;
+	background-color : white;
+	width:150px;
+	height:40px;
+}
+
+#main_content #find_house #banner_box #c_find_button a{
+	text-decoration: none;
+	line-height: 40px;
+	color:#484848;
+	font-weight: bold;
+}
+
+#main_content #find_city{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#main_content #find_city #find_citybtns{
+	margin-bottom:20px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-content: space-around;
+}
+
+#main_content #find_city #find_citybtns .city_box{
+/* 	margin:5px 10px; */
+	color:#000;
+	width: 253px;
+	height: 480px;
+}
+
+#main_content #find_city #find_citybtns .city_box img{
+	width: inherit;
+	border-radius: 10px;
+}
+
+#main_content #find_city #find_citybtns p{
+	font-size: 14px;
+	font-weight: bold;
+	color:#484848;
+	text-align: left;
+	padding-left:10px;
+}
+
+#main_content #find_city #find_citybtns .city_name{
+	width:inherit;
+	font-size: 13px;
+	text-align: left;
+	padding:0 10px;
+}
+
+#main_content #best_homes{
+	width: 90%;
+	margin:0 auto;
+	text-align: center;
+}
+
+#main_content #best_homes #homes_btns{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-content: space-between;
+	
+}
+
+#main_content #best_homes #homes_btns .best_box{
+	width: 435px;
+}
+#main_content #best_homes #homes_btns .best_box img{
+	width: inherit;
+	border-radius: 10px;
+}
+
+#main_content #best_homes #homes_btns .best_box .best_name{
+	
+}
+
