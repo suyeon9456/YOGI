@@ -21,11 +21,13 @@ SqlSession sqlSession;
 	public List<HomesVo> goHomes(String findStr) {
 		List<HomesVo> list = null;
 		
+		System.out.println(findStr + "findStr");
+		
 		try {
-			list = sqlSession.selectList("j.homes_search", findStr);
+			list = sqlSession.selectList("homes.homes_search", findStr);
 			
 			for(int i = 0; i < list.size(); i++) {
-				List<HFilesVo> photoList = sqlSession.selectList("j.homes_photo", list.get(i).hSerial);
+				List<HFilesVo> photoList = sqlSession.selectList("homes.homes_photo", list.get(i).hSerial);
 				list.get(i).setFileList(photoList);
 			}
 			

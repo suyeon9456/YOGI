@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>YOGI_header</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<link href = '../static_file/css/header.css' type = 'text/css' rel = 'stylesheet'> 
+<link href = '../css/header.css' type = 'text/css' rel = 'stylesheet'> 
 </head>
 <body>
 <form method="post" name = "header_frm">
@@ -34,7 +34,7 @@
 			</div><!-- menu_box close -->
 			
 			<div id = "mypage_img">
-				<img src="../static_file/images/icon/user.png"/>
+				<img src="../img/icon/user.png"/>
 			</div><!-- mypage_img close -->
 			
 		</div><!-- main_box close -->
@@ -48,6 +48,6 @@
 		</div>
 	</div>
 </form>
-<script src = "../static_file/js/header.js"></script>
+<script src = "../js/header.js"></script>
 </body>
 </html>

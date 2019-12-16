@@ -32,6 +32,11 @@ public class HomesController {
 		mv.addObject("list", list);
 		mv.addObject("list_size", list.size());
 		
+		for(int i = 0; i < 3; i++) {
+			bestTop.add(list.get(i));
+		}
+		
+		mv.addObject("best_list", bestTop);
 		
 		mv.setViewName("homes/homes_list");
 		return mv;
