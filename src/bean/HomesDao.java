@@ -39,17 +39,5 @@ SqlSession sqlSession;
 		}
 	}
 	
-	public HomesVo select(String serial) {
-		HomesVo vo = new HomesVo();
-		int one = Integer.parseInt(serial);
-		try{
-			vo = sqlSession.selectOne("homes.select", one);
-			vo.setVo(sqlSession.selectOne("homes.details", one));
-			//TODO 댓글 받아와야 해
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}finally {
-			return vo;
-		}
-	}
+
 }

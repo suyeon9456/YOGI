@@ -20,14 +20,4 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
 	<select id = "homes_photo" parameterType="Integer" resultType="bean.HFilesVo">
 		select fPhoto from hFiles where fPserial = #{_parameter}
 	</select>
-	
-	<!-- 숙소 검색 -->
-	<select id="select" parameterType="Integer" resultType="bean.HomesVo">
-		SELECT * FROM HOUSE WHERE HSERIAL = #{_parameter}
-	</select>
-	
-	<!-- 숙소 상세내용 -->
-	<select id="details" parameterType="Integer" resultType="bean.DetailsVo">
-		SELECT * FROM DETAILS WHERE DPSERIAL = #{_parameter}
-	</select>
 </mapper>

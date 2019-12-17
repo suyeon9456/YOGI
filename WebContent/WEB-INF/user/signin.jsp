@@ -130,7 +130,7 @@ pageEncoding="UTF-8"%>
         background-size: contain;
         width: 40px;
         height: 40px;
-        background-image: url("./img/login/kakao_login.png");
+        background-image: url("./img/kakao_login.png");
         float: left;
       }
 
@@ -236,11 +236,11 @@ pageEncoding="UTF-8"%>
     	font-size: 15px;
     	color:#333;
     	border:none;
-    	width: 308px;
+    	width: 320px;
     	outline: none;
     	background: none;
     	padding: 0 5px;
-    	height: 37px;
+    	height: 40px;
     }
     .logbtn{
 	   background: rgb(255, 90, 95);
@@ -274,12 +274,12 @@ pageEncoding="UTF-8"%>
           <div id="h3signin">
             <div id="h4signin">
               <div style="width: 100%; height: 20px;">
-                <button onclick="popdownSignin()" style="float: left; border: 0; outline: 0; width: 20px; height: 20px; font-size: 20px; color: rgb(118, 118, 118); cursor: pointer;">X</button>
+                <button onclick="popdownSignin()" style="float: left; border: 0; cursor: pointer; outline: 0; width: 20px; height: 20px; font-size: 20px; color: rgb(118, 118, 118); background-color: #fff">X</button>
               </div>
               <div id="snsSign">
                 <!-- kakao Auth-->
                 <a
-                  href="https://kauth.kakao.com/oauth/authorize?client_id=1ad217292db6a23ed8ec66d0e6129df7&redirect_uri=http://localhost:9999/YOGI_J/user/login/kakao&response_type=code"
+                  href="https://kauth.kakao.com/oauth/authorize?client_id=1ad217292db6a23ed8ec66d0e6129df7&redirect_uri=http://localhost:9999/YOGI/user/login/kakao&response_type=code"
                   target="_self"
                 >
                   <span id="kaCustomBtn">
@@ -322,7 +322,7 @@ pageEncoding="UTF-8"%>
                 </span>
               </div>
 			  <div id="signinEmail">
-                <form action="user/login/email" method="post" name="emailForm">
+                <form action="#" method="post" name="emailForm">
                 	<div class="txtb">
                 		<input type="text" name="mEmail" placeholder="이메일 주소">
                 	</div>
@@ -331,7 +331,7 @@ pageEncoding="UTF-8"%>
                 		<input type="password" name="mPwd" placeholder="비밀번호">
                 	</div>
                 	<div style="width:320px; box-sizing: border-box; margin: 0 auto; text-align: left;">
-                		<button name="forgot_pwd" class="forgotbtn">비밀번호가 생각나지 않으세요?</button>
+                		<button name="forgot_pwd" class="forgotbtn" style = "background-color: #fff; cursor: pointer;">비밀번호가 생각나지 않으세요?</button>
                 	</div>
 	                <button name="email_signin" class="logbtn">로그인</button>             	
                 </form>
@@ -386,11 +386,6 @@ pageEncoding="UTF-8"%>
 	}
     signinform.mPwd.onblur = function() {
 		p_p_node.setAttribute("style", "border : 1px solid rgb(235, 235, 235)");		
-	}
-    
-    var e_form = document.emailForm;
-    e_form.email_signin.onclick = function() {
-		e_form.submit();
 	}
     
     var googleUser = {};

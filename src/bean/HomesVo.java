@@ -13,17 +13,9 @@ public class HomesVo {
 	String hLocation;
 	
 	List<HFilesVo> fileList;
-	DetailsVo vo;
 	
 	float grade = 0;//평점을 위한 변수
 	
-	
-	public DetailsVo getVo() {
-		return vo;
-	}
-	public void setVo(DetailsVo vo) {
-		this.vo = vo;
-	}
 	public int gethSerial() {
 		return hSerial;
 	}

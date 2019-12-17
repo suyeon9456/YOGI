@@ -130,7 +130,7 @@ pageEncoding="UTF-8"%>
         background-size: contain;
         width: 40px;
         height: 40px;
-        background-image: url("./img/login/kakao_login.png");
+        background-image: url("./static_file/images/kakao_login.png");
         float: left;
       }
 
@@ -218,7 +218,6 @@ pageEncoding="UTF-8"%>
       	text-align: center;
       	margin-bottom: 16px;
       	margin-top: 16px;
-      	cursor: pointer;
       }
       #signupEmail #emailBtn{
 	   display:block;
@@ -241,7 +240,7 @@ pageEncoding="UTF-8"%>
         background-size: contain;
         width: 32px;
         height: 32px;
-        background-image: url("./img/login/email.png");
+        background-image: url("./static_file/images/email.png");
         float: left;
         background-repeat: no-repeat;
       }
@@ -309,7 +308,6 @@ pageEncoding="UTF-8"%>
     	border: none;
     	background: white;
     	font-size: 14px;
-    	cursor: pointer;
     }
     #birth_chooser #year{
     	width: 38%;
@@ -335,7 +333,7 @@ pageEncoding="UTF-8"%>
           <div id="h3signup">
             <div id="h4signup">
               <div style="width: 100%; height: 20px;">
-                <button onclick="popdownSignup()" style="float: left; border: 0; outline: 0; width: 20px; height: 20px; font-size: 20px; color: rgb(118, 118, 118); cursor: pointer;">X</button>
+                <button onclick="popdownSignup()" style="float: left; border: 0; outline: 0; width: 20px; height: 20px; font-size: 20px; color: rgb(118, 118, 118);">X</button>
               </div>
               <div id="snsSign">
                 <!-- kakao Auth-->
@@ -408,7 +406,7 @@ pageEncoding="UTF-8"%>
    <!-- 이메일 회원가입 ******************************************************************************** -->
             <div id="h4signup_email">
 	            <div style="width: 100%; height: 20px;">
-	                <button onclick="popdownSignup()" style="float: left; border: 0; outline: 0; width: 20px; height: 20px; font-size: 20px; color: rgb(118, 118, 118); cursor: pointer;">X</button>
+	                <button onclick="popdownSignup()" style="float: left; border: 0; outline: 0; width: 20px; height: 20px; font-size: 20px; color: rgb(118, 118, 118); background-color: #fff;">X</button>
 	              </div>
 	            <div style="display: inline-block; box-sizing: border-box; margin: 0 auto; width: 320px; font-size: 14px; margin-bottom: 20px;">
 	              	<span style="">
@@ -427,9 +425,9 @@ pageEncoding="UTF-8"%>
 	                  </span>
 	                </span>
               	</div>
-            	<form name="create_frm" method="post">
+            	<form name="create_frm" method="post" action="">
             		<div class="txtb">
-                		<input type="email" name="mEmail" placeholder="이메일 주소">
+                		<input type="text" name="mEmail" placeholder="이메일 주소">
                 	</div>
                 	<div class="txtb">
                 		<input type="text" name="mName" placeholder="이름">
@@ -449,7 +447,7 @@ pageEncoding="UTF-8"%>
                 		<div id="birth_chooser">
                 			
                 			<div id="year">
-                				<select name="birth_year" id="birth_y" >
+                				<select name="birth_year" >
                 					<option selected="selected">년</option>
                 					<option value="2018">2019년</option>
                 					<option value="2018">2018년</option>
@@ -572,7 +570,7 @@ pageEncoding="UTF-8"%>
                 			</div>
                 			
                 			<div id="month">
-                				<select name="birth_month" id="birth_m">
+                				<select name="birth_month">
                 					<option selected="selected">월</option>
                 					<option value="1">1월</option>
                 					<option value="2">2월</option>
@@ -592,7 +590,7 @@ pageEncoding="UTF-8"%>
                 			</div>
                 			
                 			<div id="day">
-                				<select name="birth_day" id="birth_d">
+                				<select name="birth_day">
                 					<option selected="selected">일</option>
                 					<option value="1">1일</option>
 							        <option value="2">2일</option>
@@ -631,8 +629,7 @@ pageEncoding="UTF-8"%>
                				</div>
                 		</div>
                 	</div>
-                	<input type="hidden" name="mBirthday" id="mBirthday"/>
-                	 <button name="email_signup" class="logbtn" onclick="signUp()">가입하기</button>
+                	 <button name="email_signin" class="logbtn">가입하기</button>
             	</form>
             	<div style="margin-top: 16px; margin-bottom: 16px; display: block; box-sizing: border-box;">
               		<div style="border-bottom-width: var(--border-rule-border-width, 1px); border-bottom-color: #e4e4e4;border-bottom-style: solid"></div>
@@ -705,21 +702,6 @@ pageEncoding="UTF-8"%>
 		p_p_node.setAttribute("style", "border : 1px solid rgb(235, 235, 235)");		
 	}
     
-	function signUp() {
-		//무결성 체크 안함
-		let y = document.getElementById("birth_y");
-		let m = document.getElementById("birth_m");
-		let d = document.getElementById("birth_d");
-		
-		var b_y = y.options[y.selectedIndex].value;
-		var b_m = m.options[m.selectedIndex].value;
-		var b_d = d.options[d.selectedIndex].value;
-		
-		document.getElementById("mBirthday").value = b_y + "-" + b_m + "-" + b_d;
-		
-		createform.action = "user/email";
-		createform.submit();
-	}
     var googleUser = {};
     var startApp = function() {
       gapi.load("auth2", function() {

@@ -15,6 +15,7 @@ pageEncoding="UTF-8"%>
       }
     </style>
   </head>
+  
   <body>
     <div id="main_header">
       <img alt="main" src="./img/main/bg4.jpg" aria-hidden="true" />
@@ -200,7 +201,7 @@ pageEncoding="UTF-8"%>
 		</div>
 	</div>
 </div>
-  <%@include file = "./WEB-INF/user/signup.jsp" %>
-  <%@include file = "./WEB-INF/user/signin.jsp" %>
+  
+
 </body>
 </html>
