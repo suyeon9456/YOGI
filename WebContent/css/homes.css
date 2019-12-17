@@ -195,9 +195,6 @@
 	margin-right: 5px;
 }
 
-
-/*********************************************************************/
-
 #homes_list .home_box{
 	display: flex;
 	justify-content: space-between;
@@ -348,6 +345,174 @@
 }
 
 #homes_list .h_grade>img{
+	float: left;	
+	margin-right: 5px;
+}
+
+
+
+/*search_list********************************************************************/
+
+#search_list{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#search_list .content_title{
+	text-align: left;
+}
+
+#search_list .home_box{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-content: space-around;
+}
+
+#search_list .cont{
+	margin-bottom: 30px;
+}
+
+#search_list .slide_wrap{
+	position: relative;
+	width: 260px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#search_list .slide_box{
+	width: 100%;
+	margin: auto;
+	overflow-x: hidden;
+}
+
+#search_list .slide_content{
+	display: table;
+	float: left;
+	width: 260px;
+}
+
+#search_list .slide_content img{
+	width: 100%;
+	border-radius: 5px;
+}
+
+#search_list .slide_btn_p{
+	position: absolute !important;
+    display: block !important;
+    top: 50% !important;
+    pointer-events: auto !important;
+    transform: translateY(-50%) !important;
+    left: 8px !important;
+}
+
+#search_list .slide_btn_n{
+    position: absolute !important;
+    display: block !important;
+    top: 50% !important;
+    pointer-events: auto !important;
+    transform: translateY(-50%) !important;
+    right: 8px !important;
+}
+
+#search_list button{
+	-webkit-box-pack: center !important;
+    -webkit-box-align: center !important;
+    -webkit-appearance: none !important;
+    display: inline-block;
+    color: rgb(34, 34, 34) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    cursor: pointer !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-clip: padding-box !important;
+    box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 1px 2px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    border-image: initial !important;
+    outline: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    transition: box-shadow 0.2s ease 0s, -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
+	line-height: 15px;
+}
+
+#search_list button>img{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+}
+
+#search_list .slide_pagination_box{
+	position: absolute !important;
+	margin: 0 auto;
+	text-align: center;
+    left: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    margin-bottom:5px;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%) !important;
+    border-radius: 5px;
+}
+
+#search_list .slide_pagination{
+	overflow:hidden;
+	padding:0;
+	display:inline-block;
+	margin: 0 auto;
+	list-style: none;
+}
+
+#search_list .slide_pagination li{
+	float: left;
+    margin: 10px 5px;
+	background-color: rgba(255, 255, 255, 0.9) !important;
+	height:4px;
+	width: 4px;
+	border-radius: 50%;
+	border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.09);
+}
+
+#search_list .dot_active{
+	border-style: solid !important;
+    border-width: 2px !important;
+    border-color: rgba(0, 0, 0, 0.09) !important;
+}
+
+#search_list .h_content_box{
+	text-align: left;
+	font-size: 13px;
+	color: #484848;
+	overflow: hidden;
+}
+
+#search_list .h_name{
+	display:inline-block;
+	width:85%;
+	font-size: 14px;
+	color: rgb(113, 113, 113);
+	margin-bottom: 10px;
+	float: left;
+}
+
+#search_list .h_grade{
+	display: inline-block;
+	width: 15%;
+	font-size: 13px;
+	margin-bottom: 10px;
+	line-height: 16px;
+	overflow: hidden;
+	text-align: right;
+}
+
+#search_list .h_grade>img{
 	float: left;	
 	margin-right: 5px;
 }
