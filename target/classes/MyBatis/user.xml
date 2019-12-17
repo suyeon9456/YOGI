@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
+       "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+       
+<mapper namespace="user">
+	<!-- 카카오 로그인 전, 회원이 등록되어 있는지 확 -->
+	<select id="check_user" parameterType="String" resultType="String">
+		SELECT MPHOTO FROM MEMBER WHERE MEMAIL = #{_parameter}
+	</select>
+	
+	<insert id="insert" parameterType="bean.UserVo">
+		INSERT INTO MEMBER(MEMAIL, MPWD, MPHONE, MGENDER, MPHOTO, MNAME, MBIRTHDAY)
+		 VALUES(#{mEmail}, #{mPwd}, #{mPhone}, #{mGender}, #{mPhoto}, #{mName}, #{mBirthday})
+	</insert>
+	
+	<select id="signin" parameterType="bean.UserVo" resultType="bean.UserVo">
+		SELECT * FROM MEMBER WHERE MEMAIL = #{mEmail} and MPWD = #{mPwd}
+	</select>
+</mapper>
