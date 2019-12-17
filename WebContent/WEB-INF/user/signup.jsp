@@ -717,7 +717,7 @@ pageEncoding="UTF-8"%>
 		
 		document.getElementById("mBirthday").value = b_y + "-" + b_m + "-" + b_d;
 		
-		createform.action = "user/email";
+		createform.action = "http://localhost:9999/YOGI_J/user/email";
 		createform.submit();
 	}
     var googleUser = {};
