@@ -16,18 +16,13 @@
 		<beans:property name="suffix" value = ".jsp"></beans:property>
 	</beans:bean>      
 	
+	<beans:bean class="org.springframework.http.converter.StringHttpMessageConverter">
+            <beans:property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+   </beans:bean>
+	
 	<resources location="/img/" mapping="/img/**"></resources>
 	<resources location="/css/" mapping="/css/**"></resources>
 	<resources location="/js/" mapping="/js/**"></resources>
-	
-	<!-- @ResponseBody로 String 처리할때 한글처리 -->
-        <beans:bean class="org.springframework.http.converter.StringHttpMessageConverter">
-            <beans:property name="supportedMediaTypes">
-                <beans:list>
-                    <beans:value>text/html;charset=UTF-8</beans:value>
-                </beans:list>
-            </beans:property>
-       </beans:bean>
 	
       <annotation-driven />
       

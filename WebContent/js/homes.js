@@ -15,6 +15,7 @@ const bPageDotss = document.getElementsByClassName("b_cont");
 	for(var i = 0; i < bSlideList.length; i++){	
 		
 		let bSlideContents = bSlideList[i].getElementsByClassName("b_slide_content");
+		alert(bSlideContents.length + "bSlideContents.length");
 		let bSlideLen = bSlideContents.length;
 		bSlideList[i].style.width = bSlideWidth * (bSlideLen + 2) + "px";
 		
@@ -90,20 +91,22 @@ const bPageDotss = document.getElementsByClassName("b_cont");
 		
 		Array.prototype.forEach.call(bPageDots, function(bDot, bK){
 			bDot.addEventListener("click", function(e){
+				alert();
 				e.preventDefault();
 				bCurDot = bCurDottt.getElementsByClassName("b_dot_active");
-
+				alert(bCurDot + "bCurDot");
+				alert(bCurDot[0] + "bCurDot[0]");
 				bCurDot[0].classList.remove("b_dot_active");
 
-				bCurDot = this;
-				this.classList.add("b_dot_active");
-				
-				bCurSlide.classList.remove("b_slide_active");
-				bCurIndex = Number(this.getAttribute("b_data-index"));
-				bCurSlide = bSlideContents[bCurIndex];
-				bCurSlide.classList.add("b_slide_active");
-				bSlideListI.style.transition = bSlideSpeed + "ms";
-				bSlideListI.style.transform = "translate3d(-" + (bSlideWidth * (bCurIndex + 1)) + "px, 0px, 0px)";
+//				bCurDot = this;
+//				this.classList.add("b_dot_active");
+//				
+//				bCurSlide.classList.remove("b_slide_active");
+//				bCurIndex = Number(this.getAttribute("b_data-index"));
+//				bCurSlide = bSlideContents[bCurIndex];
+//				bCurSlide.classList.add("b_slide_active");
+//				bSlideListI.style.transition = bSlideSpeed + "ms";
+//				bSlideListI.style.transform = "translate3d(-" + (bSlideWidth * (bCurIndex + 1)) + "px, 0px, 0px)";
 				
 			});
 		});
@@ -126,7 +129,9 @@ const pageDotss = document.getElementsByClassName("cont");
 		slideList[i].style.width = slideWidth * (slideLen + 2) + "px";
 		
 		let firstChild = slideList[i].firstElementChild;
+//		alert(firstChild + "firstChild");
 		let lastChild = slideList[i].lastElementChild;
+//		alert(lastChild + "lastChild");
 		let clonedFirst = firstChild.cloneNode(true);
 		let clonedLast = lastChild.cloneNode(true);
 		

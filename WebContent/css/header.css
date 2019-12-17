@@ -7,7 +7,6 @@ body{
 }
 
 #header{
-	position: relative;
 	width: 100%;
 }
 
@@ -112,10 +111,3 @@ body{
 	border-radius: 5px;
 }
 
-#header #guest{
-	display: inline-block;
-	position: absolute;
-	top:130px;
-	left:230px;
-	z-index: 1000;
-}
