@@ -125,6 +125,7 @@
 		
 </div>
 
+
 <script src = "../js/homes.js"></script>
 </body>
 </html>
