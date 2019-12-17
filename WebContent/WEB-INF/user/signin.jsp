@@ -322,7 +322,7 @@ pageEncoding="UTF-8"%>
                 </span>
               </div>
 			  <div id="signinEmail">
-                <form action="user/login/email" method="post" name="emailForm">
+                <form action="http://localhost:9999/YOGI_J/user/login/email" method="post" name="emailForm">
                 	<div class="txtb">
                 		<input type="text" name="mEmail" placeholder="이메일 주소">
                 	</div>
