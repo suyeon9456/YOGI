@@ -61,4 +61,14 @@ public class HomesController {
 		return mv;
 		
 	}
+	
+	@RequestMapping(value="/search/{serial}")	
+	public ModelAndView searchone(@PathVariable("serial") String serial ) {	
+		ModelAndView mv = new ModelAndView();	
+		HomesVo vo = dao.select(serial);	
+
+
+		return mv;			
+
+	}
 }
