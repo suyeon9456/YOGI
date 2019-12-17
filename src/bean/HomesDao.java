@@ -1,5 +1,6 @@
 package bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -19,7 +20,7 @@ SqlSession sqlSession;
 	}
 	
 	public List<HomesVo> goHomes(String findStr) {
-		List<HomesVo> list = null;
+		List<HomesVo> list = new ArrayList<HomesVo>();
 		
 		System.out.println(findStr + "findStr");
 		
@@ -38,5 +39,17 @@ SqlSession sqlSession;
 		}
 	}
 	
-
+	public HomesVo select(String serial) {
+		HomesVo vo = new HomesVo();
+		int one = Integer.parseInt(serial);
+		try{
+			vo = sqlSession.selectOne("homes.select", one);
+			vo.setVo(sqlSession.selectOne("homes.details", one));
+			//TODO 댓글 받아와야 해
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			return vo;
+		}
+	}
 }
