@@ -99,7 +99,8 @@ const bPageDotss = document.getElementsByClassName("b_cont");
 				this.classList.add("b_dot_active");
 				
 				bCurSlide.classList.remove("b_slide_active");
-				bCurIndex = Number(this.getAttribute("b_data-index"));
+				bCurIndex = Number(this.getAttribute("data-index"));
+				alert("dd");
 				bCurSlide = bSlideContents[bCurIndex];
 				bCurSlide.classList.add("b_slide_active");
 				bSlideListI.style.transition = bSlideSpeed + "ms";
@@ -215,4 +216,11 @@ const pageDotss = document.getElementsByClassName("cont");
 			});
 		});
 		
+	}
+	
+	//view 페이지 이동
+	function goHomesView(hSerial){
+		var url = "http://localhost:9999/YOGI_J/homes/search/" + hSerial;
+		headerFrm.action = url;
+		headerFrm.submit();
 	}
