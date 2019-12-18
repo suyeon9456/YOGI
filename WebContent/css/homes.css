@@ -10,39 +10,6 @@
 	text-align: left;
 }
 
-/* #homes_list #best_homes #homes_btns{ */
-/* 	display: flex; */
-/* 	justify-content: space-between; */
-/* 	flex-wrap: wrap; */
-/* 	align-content: space-between; */
-	
-/* } */
-
-/* #homes_list #best_homes #homes_btns .best_box{ */
-/* 	width: 435px; */
-/* 	font-size: 13px; */
-/* 	color:#484848; */
-/* } */
-
-/* #homes_list #best_homes #homes_btns .best_box img{ */
-/* 	width: inherit; */
-/* 	border-radius: 10px; */
-/* } */
-
-/* #homes_list .home_score{ */
-/* 	overflow: hidden; */
-/* } */
-
-/* #homes_list .home_score>img{ */
-/* 	width: 16px; */
-/* 	height: 16px; */
-/* 	float: left; */
-/* } */
-
-/* #homes_list #best_homes #homes_btns .best_box .best_address{ */
-/* 	font-size: 14px; */
-/* 	text-align: left; */
-/* } */
 #homes_list #best_homes{
 	display: flex;
 	justify-content: space-between;
@@ -168,6 +135,11 @@
 	text-align: left;
 	font-size: 13px;
 	color: #484848;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#homes_list .b_h_content_tit{
 	overflow: hidden;
 }
 
@@ -325,9 +297,13 @@
 	overflow: hidden;
 }
 
+#homes_list .h_content_tit{
+	overflow: hidden;
+}
+
 #homes_list .h_name{
 	display:inline-block;
-	width:85%;
+	width:82%;
 	font-size: 14px;
 	color: rgb(113, 113, 113);
 	margin-bottom: 10px;
@@ -336,7 +312,7 @@
 
 #homes_list .h_grade{
 	display: inline-block;
-	width: 15%;
+	width: 18%;
 	font-size: 13px;
 	margin-bottom: 10px;
 	line-height: 16px;
@@ -416,6 +392,18 @@
     right: 8px !important;
 }
 
+#search_list .slide_pagination_box{
+	position: absolute !important;
+	margin: 0 auto;
+	text-align: center;
+    left: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    margin-bottom:5px;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%) !important;
+    border-radius: 5px;
+}
+
 #search_list button{
 	-webkit-box-pack: center !important;
     -webkit-box-align: center !important;
@@ -446,18 +434,6 @@
 	width: 20px;
 	height: 20px;
 	vertical-align: middle;
-}
-
-#search_list .slide_pagination_box{
-	position: absolute !important;
-	margin: 0 auto;
-	text-align: center;
-    left: 0px !important;
-    right: 0px !important;
-    bottom: 0px !important;
-    margin-bottom:5px;
-    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%) !important;
-    border-radius: 5px;
 }
 
 #search_list .slide_pagination{
@@ -491,6 +467,7 @@
 	font-size: 13px;
 	color: #484848;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 #search_list .h_name{

@@ -113,9 +113,17 @@ body{
 }
 
 #header #guest{
-	display: inline-block;
+	display: none;
 	position: absolute;
 	top:130px;
 	left:230px;
 	z-index: 1000;
+}
+
+#header #type{
+	display: none;
+	position: absolute;
+	top:130px;
+	left:155px;
+	z-index: 999;
 }
