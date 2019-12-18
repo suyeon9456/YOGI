@@ -180,15 +180,6 @@
 			}
 		}
 	}
-	
-	gTypeCancel.onclick = function(){
-		adultNum.innerHTML = 0;
-		childNum.innerHTML = 0;
-		infantNum.innerHTML = 0;
-		
-		guest.style.display = "none";
-	}
-	
 </script>
 </body>
 </html>
