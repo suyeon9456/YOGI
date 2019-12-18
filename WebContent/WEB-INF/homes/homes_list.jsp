@@ -50,16 +50,14 @@
 					</div><!-- b_slide_wrap close -->
 				</div><!-- b_container close -->
 				
-				<div class = "b_h_content_box" onclick = "goHomesView('${b_data.hSerial}');">
-					<div class = "b_h_content_tit">
-						<div class = "b_h_name">${b_data.hName}</div>
-						<div class = "b_h_grade">
-							<img src="../img/icon/star.png"/>
-							<span>${b_data.grade}</span>
-						</div>					
+				<div class = "b_h_content_box">
+					<div class = "b_h_name">${data.hName}</div>
+					<div class = "b_h_grade">
+						<img src="../img/icon/star.png"/>
+						<span>${data.grade}</span>
 					</div>
-					<div class = "b_h_content">${b_data.hContent}</div>
-					<div class = "b_h_address">${b_data.hAddress}</div>
+					<div class = "b_h_content">${data.hContent}</div>
+					<div class = "b_h_address">${data.hAddress}</div>
 				</div>
 				
 			</div><!-- b_cont close -->
@@ -112,13 +110,11 @@
 					</div><!-- .slide_wrap -->
 				</div><!-- .container -->
 				
-				<div class = "h_content_box" onclick = "goHomesView('${data.hSerial}');">
-					<div class = "h_content_tit">
-						<div class = "h_name">${data.hName}</div>
-						<div class = "h_grade">
-							<img src="../img/icon/star.png"/>
-							<span>${data.grade}</span>
-						</div>					
+				<div class = "h_content_box">
+					<div class = "h_name">${data.hName}</div>
+					<div class = "h_grade">
+						<img src="../img/icon/star.png"/>
+						<span>${data.grade}</span>
 					</div>
 					<div class = "h_content">${data.hContent}</div>
 					<div class = "h_address">${data.hAddress}</div>

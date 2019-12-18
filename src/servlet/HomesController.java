@@ -66,9 +66,8 @@ public class HomesController {
 	public ModelAndView searchone(@PathVariable("serial") String serial ) {	
 		ModelAndView mv = new ModelAndView();	
 		HomesVo vo = dao.select(serial);	
-
-
+		mv.setViewName("homes/home_details");
+		mv.addObject("data", vo);
 		return mv;			
-
 	}
 }
