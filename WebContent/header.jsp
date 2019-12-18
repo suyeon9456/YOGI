@@ -20,7 +20,7 @@
 			
 			<div id = "search_box">
 				<div id = "search_div">
-					<input type="search" onkeypress="if( event.keyCode==13 ){searchEnter();}" name = "findStr" placeholder="원하는 숙소를 검색하세요."/> 
+					<input type="search" onkeypress="if( event.keyCode==13 ){searchEnter();}" name = "findStr" placeholder="원하는 숙소를 검색하세요." value = "${param.findStr }"/> 
 <!-- 					<img src=""/> -->
 				</div>
 			</div>
@@ -54,14 +54,17 @@
 		
 		<div id = "filter_box">
 			<input type = "button" name = "dDate" id = "d_date" value = "여행 날짜" onclick = "filterBtnsClick(1);"/>
-			<input type = "button" name = "hType" id = "h_type" value = "집 유형" onclick = "filterBtnsClick(2);"/>
-			<input type = "button" name = "dGuest" id = "d_guest" value = "인원" onclick = "filterBtnsClick(3);"/>
+			<input type = "button" name = "hTypeBtn" id = "h_type" value = "집 유형" onclick = "filterBtnsClick(2);"/>
+			<input type = "button" name = "dGuestBtn" id = "d_guest" value = "인원" onclick = "filterBtnsClick(3);"/>
 			<input type = "button" name = "hPrice" id = "h_price" value = "가격" onclick = "filterBtnsClick(4);"/>
 			<input type = "button" name = "etc" id = "etc" value = "필터 추가하기" onclick = "filterBtnsClick(5);"/>
 		</div>
 		
+		<%@include file="./WEB-INF/filter/type.jsp" %>
 		<%@include file="./WEB-INF/filter/guest.jsp" %>
 	</div>
+	<input type = "hidden" name = "hType" value = "${(empty param.hType) ? 0 : param.hType }"/>
+	<input type = "hidden" name = "dGuest" value = "${(empty param.dGuest) ? 0 : param.dGuest }"/>
 </form>
 <%@include file = "./WEB-INF/user/signup.jsp" %>
 <%@include file = "./WEB-INF/user/signin.jsp" %>
