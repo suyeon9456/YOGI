@@ -69,5 +69,3 @@ gTypeSave.onclick = function(){
 	
 	guest.style.display = "none";
 }
-
-

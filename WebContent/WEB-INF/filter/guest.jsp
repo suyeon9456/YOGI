@@ -180,8 +180,6 @@
 			}
 		}
 	}
-	
-	
 </script>
 </body>
 </html>
