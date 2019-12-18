@@ -56,7 +56,7 @@
 					</div><!-- .slide_wrap -->
 				</div><!-- .container -->
 				
-				<div class = "h_content_box">
+				<div class = "h_content_box" onclick = "goHomesView('${data.hSerial}');">
 					<div class = "h_name">${data.hName}</div>
 					<div class = "h_grade">
 						<img src="../img/icon/star.png"/>
