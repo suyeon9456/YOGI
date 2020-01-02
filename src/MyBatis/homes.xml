@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
 <mapper namespace="homes">
 	<!-- 숙소 리스트 -->
 	<select id = "homes_search" parameterType="String" resultType="bean.HomesVo">
-		SELECT hSerial, hEmail, hName, hContent, hType, hAddress, 
+		SELECT hSerial, hEmail, hName, hContent, hType, hAddress, hPrice,
 		ROUND( (SELECT (( SUM(c.cClean) + SUM(c.cService) + SUM(c.cLocation) )/3)/COUNT(*) 
 		FROM COMMENTS c
 		WHERE c.cPserial = h.hSerial

@@ -106,8 +106,6 @@
 	top:13px;
 	left:25px;
 }
-
-
 </style>
 </head>
 <body>
@@ -116,14 +114,13 @@
 		<div class = "t_top_box">
 			<div class = "t_type">
 				<div class = "t_top_box_txt">
-					<div class = "t_type_tit">집 전체</div>
-					<div class = "t_type_ex">집 전체를 사용합니다.</div>
+					<div class = "t_type_tit">집전체</div>
+					<div class = "t_type_ex">집전체를 사용합니다.</div>
 				</div><!-- t_top_box_txt close -->
 				
 				<div class = "t_type_con">
 					<input type = "checkbox" name = "chkHType" onclick = "checkClick(1)" id = "house_chk" value = "house"/>
-					<label for = "house_chk"></label>
-					<img src="../img/icon/check.png" id = "house_chk_img" style = "display: none;"/>
+					<label for = "house_chk"><img src="../img/icon/check.png" id = "house_chk_img" style = "display: none;" for = "house_chk"/></label>
 				</div><!-- t_type_con close -->
 			</div><!-- t_type close -->
 			
@@ -135,8 +132,7 @@
 				
 				<div class = "t_type_con">
 					<input type = "checkbox" name = "chkHType" onclick = "checkClick(2)" id = "room_chk" value = "room"/>
-					<label for = "room_chk"></label>
-					<img src="../img/icon/check.png" id = "room_chk_img" style = "display: none;"/>
+					<label for = "room_chk"><img src="../img/icon/check.png" id = "room_chk_img" style = "display: none;"/></label>
 				</div><!-- t_type_con close -->
 			</div><!-- t_type close -->
 			
@@ -157,7 +153,7 @@
 </div><!-- type -->
 
 <script>
-	 const type = document.getElementById("type")
+	 const type = document.getElementById("type");
 	
 	 const houseChk = document.getElementById("house_chk");
 	 const roomChk = document.getElementById("room_chk");
@@ -165,7 +161,7 @@
 	 const chkHType = document.getElementsByName("chkHType");
 	 
 	 const tTypeCancel = document.getElementById("t_type_cancel");
-	 const tTypeSave = document.getElementById("t_type_save");
+	 const tTypeSave = document.getElementById("t_type_save"); 
 	 
 	 function checkClick(num){
 		 if(num == 1){

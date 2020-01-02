@@ -56,15 +56,30 @@
 			<input type = "button" name = "dDate" id = "d_date" value = "여행 날짜" onclick = "filterBtnsClick(1);"/>
 			<input type = "button" name = "hTypeBtn" id = "h_type" value = "집 유형" onclick = "filterBtnsClick(2);"/>
 			<input type = "button" name = "dGuestBtn" id = "d_guest" value = "인원" onclick = "filterBtnsClick(3);"/>
-			<input type = "button" name = "hPrice" id = "h_price" value = "가격" onclick = "filterBtnsClick(4);"/>
+			<input type = "button" name = "hPriceBtn" id = "h_price" value = "가격" onclick = "filterBtnsClick(4);"/>
 			<input type = "button" name = "etc" id = "etc" value = "필터 추가하기" onclick = "filterBtnsClick(5);"/>
 		</div>
 		
 		<%@include file="./WEB-INF/filter/type.jsp" %>
 		<%@include file="./WEB-INF/filter/guest.jsp" %>
+		<%@include file="./WEB-INF/filter/price.jsp" %>
+		<%@include file="./WEB-INF/filter/filter_plus.jsp" %>
 	</div>
-	<input type = "hidden" name = "hType" value = "${(empty param.hType) ? 0 : param.hType }"/>
-	<input type = "hidden" name = "dGuest" value = "${(empty param.dGuest) ? 0 : param.dGuest }"/>
+	<input type = "text" name = "hType" value = "${(empty param.hType) ? '' : param.hType }"/>
+	<input type = "text" name = "dGuest" value = "${(empty param.dGuest) ? 0 : param.dGuest }"/>
+	<input type = "text" name = "hPrice" value = "${(empty param.hPrice) ? 0 : param.hPrice }"/>
+	<input type = "text" name = "dBedroom" value = "${(empty param.c) ? 0 : param.dBedroom }"/>
+	<input type = "text" name = "dBed" value = "${(empty param.dBed) ? 0 : param.dBed }"/>
+	<input type = "text" name = "dBathroom" value = "${(empty param.dBathroom) ? 0 : param.dBathroom }"/>
+	<input type = "text" name = "dKitchen" value = "${(empty param.dKitchen) ? '' : param.dKitchen }"/>
+	<input type = "text" name = "dAc" value = "${(empty param.dAc) ? '' : param.dAc }"/>
+	<input type = "text" name = "dWifi" value = "${(empty param.dWifi) ? '' : param.dWifi }"/>
+	<input type = "text" name = "dTv" value = "${(empty param.dTv) ? '' : param.dTv }"/>
+	<input type = "text" name = "dWasher" value = "${(empty param.dWasher) ? '' : param.dWasher }"/>
+	<input type = "text" name = "dParking" value = "${(empty param.dParking) ? '' : param.dParking }"/>
+	<input type = "text" name = "dAmenity" value = "${(empty param.dAmenity) ? '' : param.dAmenity }"/>
+	<input type = "text" name = "dHdrier" value = "${(empty param.dHdrier) ? '' : param.dHdrier }"/>
+	<input type = "text" name = "dSelfcheckin" value = "${(empty param.dSelfcheckin) ? '' : param.dSelfcheckin }"/>
 </form>
 <%@include file = "./WEB-INF/user/signup.jsp" %>
 <%@include file = "./WEB-INF/user/signin.jsp" %>
