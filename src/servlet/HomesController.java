@@ -1,6 +1,8 @@
 package servlet;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,12 +28,25 @@ public class HomesController {
 		ModelAndView mv = new ModelAndView();
 		
 		findStr = "";
-		
 		List<HomesVo> list = dao.goHomes(findStr);
 		List<HomesVo> bestTop = new ArrayList<HomesVo>();
+		List<Integer> price = new ArrayList<Integer>();
+		
+		int sumPirce = 0;
+		for(int i = 0; i < list.size(); i++) {
+			price.add(list.get(i).gethPrice());
+			sumPirce += list.get(i).gethPrice();
+		}
+		
+		float avgPrice = sumPirce/price.size();
+		int minPrice = Collections.min(price);
+		int maxPrice = Collections.max(price);
 		
 		mv.addObject("list", list);
 		mv.addObject("list_size", list.size());
+		mv.addObject("minPrice",minPrice);
+		mv.addObject("maxPrice",maxPrice);
+		mv.addObject("avgPrice",avgPrice);
 		
 		for(int i = 0; i < 3; i++) {
 			bestTop.add(list.get(i));
@@ -46,15 +61,25 @@ public class HomesController {
 	@RequestMapping(value="/search")
 	public ModelAndView goSearch(String findStr) {
 		ModelAndView mv = new ModelAndView();
-		System.out.println(findStr + "재욱이 보고싶다앙");
 		
 		List<HomesVo> list = dao.goHomes(findStr);
+		List<Integer> price = new ArrayList<Integer>();
 		
-		System.out.println(list.size() + "size");
+		int sumPirce = 0;
+		for(int i = 0; i < list.size(); i++) {
+			price.add(list.get(i).gethPrice());
+			sumPirce += list.get(i).gethPrice();
+		}
 		
+		float avgPrice = sumPirce/price.size();
+		int minPrice = Collections.min(price);
+		int maxPrice = Collections.max(price);
 		
 		mv.addObject("list",list);
 		mv.addObject("list_size", list.size());
+		mv.addObject("minPrice",minPrice);
+		mv.addObject("maxPrice",maxPrice);
+		mv.addObject("avgPrice",avgPrice);
 		
 		mv.setViewName("homes/search_list");
 		
