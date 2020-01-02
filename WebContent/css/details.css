@@ -1,16 +1,23 @@
 @charset "UTF-8";
 #home_details #main {
   width: 100%;
-  height: 428.8px;
+  height: 500px;
   padding-left: 24px;
   padding-right: 24px;
   box-sizing: border-box;
   margin: 0 auto;
 }
-#home_details #main > div {
+#home_details #main #main_wrap {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+#home_details #main #main_wrap > div {
   display: inline-block;
 }
-#home_details #main #headline {
+#home_details #main #main_wrap #headline {
   width: 33.3%;
   min-width: 321px;
   box-sizing: border-box;
@@ -20,18 +27,17 @@
   height: 100%;
   float: left;
 }
-#home_details #main #headline #content {
+#home_details #main #main_wrap #headline #content {
   padding: 40px;
   color: #484848;
 }
-#home_details #main #headline #content span {
+#home_details #main #main_wrap #headline #content span {
   font-size: 28px;
 }
-#home_details #main #headline #content div {
-  margin-bottom: 12px;
+#home_details #main #main_wrap #headline #content div {
+  margin-bottom: 20px;
 }
-
-#home_details #main #main_img {
+#home_details #main #main_wrap #main_img {
   width: 65.5%;
   position: relative;
   box-sizing: border-box;
@@ -40,9 +46,9 @@
   padding-right: 8px;
   background-repeat: no-repeat;
   height: 100%;
-  background-color: aqua;
+  background-color: salmon;
 }
-#home_details #main #main_img #btn_like {
+#home_details #main #main_wrap #main_img #btn_like {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -52,7 +58,7 @@
   line-height: 32px;
   text-align: center;
 }
-#home_details #main #main_img #btn_like button {
+#home_details #main #main_wrap #main_img #btn_like button {
   width: 100%;
   height: 100%;
   background-image: url("../img/icon/like.png");
@@ -62,24 +68,340 @@
 }
 /*                호스트 소개 및 집 소개                   */
 #home_details #host {
-  padding: 0px 40px;
-  border: 1px solid #484848;
+  padding: 0px 80px;
   width: 100%;
-  height: auto;
-  min-height: 300px;
-  margin: 0 auto;
+  height: 350px;
+  margin: 70px auto;
   box-sizing: border-box;
 }
 #home_details #host > div {
   display: inline-block;
 }
 #home_details #host #explain {
-  width: 55%;
+  width: 65%;
   height: 100%;
   float: left;
 }
-#home_details #host #house_host {
-  width: 30%;
-  margin-left: 10%;
+#home_details #host #explain div {
+  margin-bottom: 30px;
+}
+#home_details #host .container {
+  width: 250px;
   float: right;
+}
+/* 여기는 호스트 프로필*/
+.our-team {
+  padding: 30px 0 40px;
+  background-color: #f7f5ec;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.our-team .picture {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+.our-team .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: salmon;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+.our-team:hover .picture::before {
+  height: 100%;
+}
+.our-team .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: salmon;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.our-team .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+.our-team:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+.our-team .title {
+  display: block;
+  font-size: 15px;
+  color: #4e5052;
+  text-transform: capitalize;
+}
+.our-team .social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: salmon;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+  height: 50px;
+}
+.our-team:hover .social {
+  bottom: 0;
+}
+.our-team .social li {
+  display: inline-block;
+}
+.our-team .social li a {
+  display: block;
+  padding: 10px;
+  font-size: 17px;
+  color: white;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+.our-team .social li a:hover {
+  color: salmon;
+  background-color: #f7f5ec;
+}
+/*ㅇㅕ기부터는 사진 상세보기*/
+#view_more {
+  margin: 90px auto;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 80px;
+  display: block;
+  height: auto;
+}
+#view_more #pictures {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  display: block;
+}
+#view_more #pictures .jnj {
+  width: 24.6%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 16px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+#view_more #pictures .jnj .up {
+  width: 100%;
+  padding-top: 66.6%;
+  position: relative;
+}
+#view_more #pictures .jnj .down {
+  margin-top: 8px;
+  display: block;
+  height: 15px;
+}
+#view_more #pictures .jnj .down span {
+  margin: 0px;
+  font-size: 16px;
+  color: #484848;
+  display: block;
+  height: 100%;
+}
+#view_more #pictures .jnj2 {
+  width: 24.6%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 16px;
+  display: none;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+#view_more #pictures .jnj2 .up {
+  width: 100%;
+  padding-top: 66.6%;
+  position: relative;
+}
+#view_more #pictures .jnj2 .down {
+  margin-top: 8px;
+  display: block;
+  height: 15px;
+}
+#view_more #pictures .jnj2 .down span {
+  margin: 0px;
+  font-size: 16px;
+  color: #484848;
+  display: block;
+  height: 100%;
+}
+/*편의시설*/
+#facilities {
+  margin: 90px auto;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 80px;
+  display: block;
+  height: auto;
+}
+#facilities #details {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  display: block;
+}
+#facilities #details .f_detail {
+  display: inline-block;
+  box-sizing: content-box;
+  padding-left: 6px;
+  padding-right: 6px;
+  vertical-align: top;
+  width: calc(19.6% - 12px);
+  background-color: #f2f2f2 !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  margin-bottom: 10px;
+}
+#facilities #details .f_detail .picture {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+}
+#facilities #details .f_detail .title {
+  color: #484848;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+/*****위치******/
+#location {
+  margin: 90px auto;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 80px;
+  display: block;
+  height: auto;
+}
+#location .l_explain {
+  width: 75%;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 800;
+  color: #484848;
+  margin-left: 8px;
+  margin-bottom: 50px;
+}
+#location #map_wrapper {
+  margin-left: 8px;
+}
+#location #map_wrapper #map {
+  width: 100%;
+  height: 400px;
+}
+/********후기**************/
+#comments {
+  margin: 90px auto;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 80px;
+  display: block;
+  height: auto;
+}
+#comments #mentions {
+  width: 100%;
+  color: #484848;
+  box-sizing: border-box;
+}
+#comments #mentions > div {
+  display: inline-block;
+}
+#comments #mentions .mention1 {
+  width: 40%;
+  margin-bottom: 40px;
+  margin-left: 8px;
+  margin-right: 40px;
+  display: inline-block;
+}
+#comments #mentions .mention1 .up1 {
+  margin-bottom: 20px;
+}
+#comments #mentions .mention1 .down1 {
+  font-size: 16px;
+}
+#comments #mentions .mention2 {
+  width: 40%;
+  margin-bottom: 40px;
+  margin-left: 8px;
+  margin-right: 40px;
+  display: none;
+}
+/***************호스트 소개***************/
+#who {
+  margin: 90px auto;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 80px;
+  display: block;
+  height: auto;
+}
+#who #meet-host {
+  width: 100%;
+  margin-left: 8px;
+  height: auto;
+  overflow: hidden;
+}
+#who #meet-host > div {
+  display: inline-block;
+}
+#who #meet-host #host_photo {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06) !important;
+  overflow: hidden;
+  float: left;
+  margin-bottom: 5px;
+}
+#who #meet-host #host_photo #img {
+  box-sizing: border-box;
+}
+#who #meet-host #host_photo #host_name {
+  border: 0;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  font-size: 18px;
+  color: #484848;
+}
+#who #meet-host #host_info {
+  color: #484848;
+  margin-left: 10%;
+  height: 100%;
+  margin-bottom: 70px;
+  float: left;
+}
+#who #meet-host #host_info_2 {
+  color: #484848;
+  margin-left: 5%;
+  height: 100%;
+}
+#rule {
+  margin: 90px auto;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 80px;
+  display: block;
+  height: auto;
+}
+#rule > div {
+  display: inline-block;
 }
