@@ -46,6 +46,7 @@ SqlSession sqlSession;
 			vo = sqlSession.selectOne("homes.select", one);
 			vo.setVo(sqlSession.selectOne("homes.details", one));
 			//TODO 댓글 받아와야 해
+			vo.setCommentsList(sqlSession.selectList("homes.comment", one));
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}finally {

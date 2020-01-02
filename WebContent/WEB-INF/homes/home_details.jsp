@@ -10,6 +10,7 @@
   </head>
   <body>
     <!-- header -->
+    <%@include file="../../header.jsp" %>
     <!-- content -->
     <div id="home_details">
       <!-- main -->
@@ -75,7 +76,7 @@
             </div>
           </div>
         </div>
-      <hr style="width: 95%; text-align: center; color: #484848;" />
+      <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--사진 상세보기-->
       <div id="view_more">
         <div>
@@ -182,8 +183,8 @@
           <span style="font-size: 18px; font-weight: 800; color: #484848; margin-left: 8px;">회원님이 이용하실 수 있는 편의시설입니다.</span>
         </div>
         <div id="details">
-          <c:choose>
-            <c:when test="${data.vo.dSelfcheckin eq y}">
+          
+            <c:if test="${data.vo.dSelfcheckin eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/self-check-in.png" style="width: 100%;">
@@ -192,8 +193,8 @@
                   셀프 체크인
                 </div>
               </div>
-            </c:when>
-            <c:when test="${data.vo.dParking eq y}">
+            </c:if>
+            <c:if test="${data.vo.dParking eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/parking.png" style="width: 100%;">
@@ -202,8 +203,8 @@
                   건물 내 무료주차
                 </div>
               </div>
-            </c:when>
-            <c:when test="${data.vo.dKitchen eq y}">
+            </c:if>
+            <c:if test="${data.vo.dKitchen eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/kitchen.png" style="width: 100%;">
@@ -212,8 +213,8 @@
                   주방
                 </div>
               </div>
-            </c:when>
-            <c:when test="${data.vo.dWasher eq y}">
+            </c:if>
+            <c:if test="${data.vo.dWasher eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/washer.png" style="width: 100%;">
@@ -222,8 +223,8 @@
                   세탁기
                 </div>
               </div>
-            </c:when>
-            <c:when test="${data.vo.dAc eq y}">
+            </c:if>
+            <c:if test="${data.vo.dAc eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/heating.png" style="width: 100%;">
@@ -232,8 +233,8 @@
                   냉난방기
                 </div>
               </div>
-            </c:when>
-            <c:when test="${data.vo.dWifi eq y}">
+            </c:if>
+            <c:if test="${data.vo.dWifi eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/wireless-internet.png" style="width: 100%;">
@@ -242,8 +243,8 @@
                   WIFI
                 </div>
               </div>
-            </c:when>
-            <c:when test="${data.vo.dTv eq y}">
+            </c:if>
+            <c:if test="${data.vo.dTv eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/tv.png" style="width: 100%;">
@@ -252,8 +253,8 @@
                   TV
                 </div>
               </div>
-            </c:when>
-            <c:when test="${data.vo.dAmenity eq y}">
+            </c:if>
+            <c:if test="${data.vo.dAmenity eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/essentials.png" style="width: 100%;">
@@ -262,8 +263,8 @@
                   욕실용품
                 </div>
               </div>
-            </c:when>
-            <c:when test="${data.vo.dHdrier eq y}">
+            </c:if>
+            <c:if test="${data.vo.dHdrier eq 'y'}">
               <div class="f_detail">
                 <div class="picture">
                   <img  src="../../img/facilities/hair-dryer.png" style="width: 100%;">
@@ -272,8 +273,7 @@
                   헤어드라이어
                 </div>
               </div>
-            </c:when>
-          </c:choose>
+            </c:if>
           <div class="f_detail">
             <div class="picture">
               <img  src="../../img/facilities/extra-pillows-blankets.png" style="width: 100%;">
@@ -284,7 +284,7 @@
           </div>
         </div>
       </div>
-      <hr style="width: 95%; text-align: center; color: #484848;" />
+      <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--위치-->
       <div id="location">
         <div>
@@ -308,7 +308,7 @@
           정확한 위치는 예약 완료 후 표시됩니다
         </div>
       </div>
-      <hr style="width: 95%; text-align: center; color: #484848;" />
+      <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--후기-->
       <!--후기글이 길 때 더보기 클릭시 확장-->
       <div id="comments">
@@ -347,7 +347,7 @@
           </c:forEach>
         </div>
       </div>
-      <hr style="width: 95%; text-align: center; color: #484848;" />
+      <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--호스트 소개-->
       <div id="who">
         <div style="margin-bottom: 60px;">
@@ -389,7 +389,7 @@
           </div>
         </div>
       </div>
-      <hr style="width: 95%; text-align: center; color: #484848;" />
+      <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--숙소 이용규칙-->
       <div id="rule">
         <div style="margin-bottom: 60px;">

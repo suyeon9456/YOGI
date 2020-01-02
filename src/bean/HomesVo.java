@@ -14,13 +14,20 @@ public class HomesVo {
 	String hLatitude; // 위도
 	String hLongitude; // 경도
 	int hPrice;
-	
+
 	List<HFilesVo> fileList;
 	List<CommentsVo> commentsList;
 	DetailsVo vo;
 
 	float grade = 0;// 평점을 위한 변수
 
+	public int gethPrice() {
+		return hPrice;
+	}
+	
+	public void sethPrice(int hPrice) {
+		this.hPrice = hPrice;
+	}
 	public DetailsVo getVo() {
 		return vo;
 	}
@@ -121,14 +128,8 @@ public class HomesVo {
 		return grade;
 	}
 
-	public void sethPrice(int hPrice) {
-		this.hPrice = hPrice;
-	}
-	public int gethPrice() {
-		return hPrice;
-	}
-
 	public void setGrade(float grade) {
 		this.grade = grade;
 	}
+
 }

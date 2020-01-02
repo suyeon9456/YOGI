@@ -264,6 +264,7 @@ pageEncoding="UTF-8"%>
    		color:#008489;
    		cursor:pointer;
    		border: none;
+   		background-color: #fff;
     }
     </style>
   </head>
@@ -274,7 +275,7 @@ pageEncoding="UTF-8"%>
           <div id="h3signin">
             <div id="h4signin">
               <div style="width: 100%; height: 20px;">
-                <button onclick="popdownSignin()" style="float: left; border: 0; outline: 0; width: 20px; height: 20px; font-size: 20px; color: rgb(118, 118, 118); cursor: pointer;">X</button>
+                <button onclick="popdownSignin()" style="float: left; border: 0; outline: 0; width: 20px; height: 20px; font-size: 20px; color: rgb(118, 118, 118); background-color:#fff; cursor: pointer;">X</button>
               </div>
               <div id="snsSign">
                 <!-- kakao Auth-->

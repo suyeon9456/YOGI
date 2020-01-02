@@ -295,6 +295,7 @@
 	font-size: 13px;
 	color: #484848;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 #homes_list .h_content_tit{

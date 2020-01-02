@@ -7,7 +7,10 @@
 <meta charset="UTF-8">
 <title>YOGI_header</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
-<link href = '../css/header.css' type = 'text/css' rel = 'stylesheet'/> 
+<!-- <link href = '../css/header.css' type = 'text/css' rel = 'stylesheet'/> -->
+<style type="text/css">
+    <%@include file="../css/header.css" %>
+</style> 
 </head>
 <body>
 <form method="post" name = "header_frm">
