@@ -127,3 +127,11 @@ body{
 	left:155px;
 	z-index: 999;
 }
+
+#header #price{
+	display: none;
+	position: absolute;
+	top:130px;
+	left:292px;
+	z-index: 999;
+}
