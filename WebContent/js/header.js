@@ -4,7 +4,7 @@
 const headerFrm = document.header_frm;
 const findStr = headerFrm.findStr;
 
-const dGuest = headerFrm.dGuest;
+const dPeople = headerFrm.dPeople;
 const dGuestBtn = headerFrm.dGuestBtn;
 
 const hTypeBtn = headerFrm.hTypeBtn;
@@ -33,6 +33,7 @@ window.onload = function(){
 	}
 }
 
+//검색창 엔터
 function searchEnter (){
 	var url = "search";
 	headerFrm.action = url;
@@ -112,7 +113,7 @@ gTypeSave.onclick = function(){
 			   Number(childNum.innerText) +
 			   Number(infantNum.innerText);
 	
-	dGuest.value = gNum;
+	dPeople.value = gNum;
 	dGuestBtn.value = gNum + "명";
 	
 	guest.style.display = "none";

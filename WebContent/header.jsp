@@ -13,7 +13,7 @@
 </style> 
 </head>
 <body>
-<form method="post" name = "header_frm">
+<form method="get" name = "header_frm">
 	<div id = "header">
 		<div id = "main_box">
 			<div id = "logo_box">
@@ -68,21 +68,21 @@
 		<%@include file="./WEB-INF/filter/price.jsp" %>
 		<%@include file="./WEB-INF/filter/filter_plus.jsp" %>
 	</div>
-	<input type = "text" name = "hType" value = "${(empty param.hType) ? '' : param.hType }"/>
-	<input type = "text" name = "dGuest" value = "${(empty param.dGuest) ? 0 : param.dGuest }"/>
-	<input type = "text" name = "hPrice" value = "${(empty param.hPrice) ? 0 : param.hPrice }"/>
-	<input type = "text" name = "dBedroom" value = "${(empty param.c) ? 0 : param.dBedroom }"/>
-	<input type = "text" name = "dBed" value = "${(empty param.dBed) ? 0 : param.dBed }"/>
-	<input type = "text" name = "dBathroom" value = "${(empty param.dBathroom) ? 0 : param.dBathroom }"/>
-	<input type = "text" name = "dKitchen" value = "${(empty param.dKitchen) ? '' : param.dKitchen }"/>
-	<input type = "text" name = "dAc" value = "${(empty param.dAc) ? '' : param.dAc }"/>
-	<input type = "text" name = "dWifi" value = "${(empty param.dWifi) ? '' : param.dWifi }"/>
-	<input type = "text" name = "dTv" value = "${(empty param.dTv) ? '' : param.dTv }"/>
-	<input type = "text" name = "dWasher" value = "${(empty param.dWasher) ? '' : param.dWasher }"/>
-	<input type = "text" name = "dParking" value = "${(empty param.dParking) ? '' : param.dParking }"/>
-	<input type = "text" name = "dAmenity" value = "${(empty param.dAmenity) ? '' : param.dAmenity }"/>
-	<input type = "text" name = "dHdrier" value = "${(empty param.dHdrier) ? '' : param.dHdrier }"/>
-	<input type = "text" name = "dSelfcheckin" value = "${(empty param.dSelfcheckin) ? '' : param.dSelfcheckin }"/>
+	<input type = "hidden" name = "hType" value = "${(empty param.hType) ? '' : param.hType }"/>
+	<input type = "hidden" name = "dPeople" value = "${(empty param.dPeople) ? 0 : param.dGuest }"/>
+	<input type = "hidden" name = "hPrice" value = "${(empty param.hPrice) ? maxPrice : param.hPrice }"/>
+	<input type = "hidden" name = "dBedroom" value = "${(empty param.c) ? 0 : param.dBedroom }"/>
+	<input type = "hidden" name = "dBed" value = "${(empty param.dBed) ? 0 : param.dBed }"/>
+	<input type = "hidden" name = "dBathroom" value = "${(empty param.dBathroom) ? 0 : param.dBathroom }"/>
+	<input type = "hidden" name = "dKitchen" value = "${(empty param.dKitchen) ? '' : param.dKitchen }"/>
+	<input type = "hidden" name = "dAc" value = "${(empty param.dAc) ? '' : param.dAc }"/>
+	<input type = "hidden" name = "dWifi" value = "${(empty param.dWifi) ? '' : param.dWifi }"/>
+	<input type = "hidden" name = "dTv" value = "${(empty param.dTv) ? '' : param.dTv }"/>
+	<input type = "hidden" name = "dWasher" value = "${(empty param.dWasher) ? '' : param.dWasher }"/>
+	<input type = "hidden" name = "dParking" value = "${(empty param.dParking) ? '' : param.dParking }"/>
+	<input type = "hidden" name = "dAmenity" value = "${(empty param.dAmenity) ? '' : param.dAmenity }"/>
+	<input type = "hidden" name = "dHdrier" value = "${(empty param.dHdrier) ? '' : param.dHdrier }"/>
+	<input type = "hidden" name = "dSelfcheckin" value = "${(empty param.dSelfcheckin) ? '' : param.dSelfcheckin }"/>
 </form>
 <%@include file = "./WEB-INF/user/signup.jsp" %>
 <%@include file = "./WEB-INF/user/signin.jsp" %>
