@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import bean.DetailsVo;
 import bean.HomesDao;
 import bean.HomesVo;
+import bean.SearchVo;
 
 @RestController
 @RequestMapping("/homes")
@@ -23,11 +25,10 @@ public class HomesController {
 	}
 
 	@RequestMapping("/list")
-	public ModelAndView homesList(String findStr) {
+	public ModelAndView homesList() {
 		ModelAndView mv = new ModelAndView();
 		
-		findStr = "";
-		List<HomesVo> list = dao.goHomes(findStr);
+		List<HomesVo> list = dao.goHomes();
 		List<HomesVo> bestTop = new ArrayList<HomesVo>();
 		List<Integer> price = new ArrayList<Integer>();
 		
@@ -58,29 +59,33 @@ public class HomesController {
 	}
 	
 	@RequestMapping(value="/search")
-	public ModelAndView goSearch(String findStr) {
+	public ModelAndView goSearch(SearchVo sVo) {
 		ModelAndView mv = new ModelAndView();
 		
-		List<HomesVo> list = dao.goHomes(findStr);
+		List<HomesVo> list = dao.goSearch(sVo);
 		List<Integer> price = new ArrayList<Integer>();
 		
-		int sumPirce = 0;
-		for(int i = 0; i < list.size(); i++) {
-			price.add(list.get(i).gethPrice());
-			sumPirce += list.get(i).gethPrice();
+		if(list.size() > 0) {
+			int sumPirce = 0;
+			for(int i = 0; i < list.size(); i++) {
+				price.add(list.get(i).gethPrice());
+				sumPirce += list.get(i).gethPrice();
+			}
+			
+			float avgPrice = sumPirce/price.size();
+			int minPrice = Collections.min(price);
+			int maxPrice = Collections.max(price);
+			
+			mv.addObject("list",list);
+			mv.addObject("list_size", list.size());
+			mv.addObject("minPrice",minPrice);
+			mv.addObject("maxPrice",maxPrice);
+			mv.addObject("avgPrice",avgPrice);
+			
+			mv.setViewName("homes/search_list");			
+		}else {
+			mv.setViewName("homes/search_null");
 		}
-		
-		float avgPrice = sumPirce/price.size();
-		int minPrice = Collections.min(price);
-		int maxPrice = Collections.max(price);
-		
-		mv.addObject("list",list);
-		mv.addObject("list_size", list.size());
-		mv.addObject("minPrice",minPrice);
-		mv.addObject("maxPrice",maxPrice);
-		mv.addObject("avgPrice",avgPrice);
-		
-		mv.setViewName("homes/search_list");
 		
 		return mv;
 		
@@ -92,6 +97,7 @@ public class HomesController {
 		HomesVo vo = dao.select(serial);	
 		mv.setViewName("homes/home_details");
 		mv.addObject("data", vo);
+		System.out.println(vo.getVo().getdKitchen());
 		return mv;			
 	}
 }
