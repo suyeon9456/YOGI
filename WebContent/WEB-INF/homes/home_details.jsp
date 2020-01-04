@@ -32,7 +32,7 @@
           </div>
           <div
             id="main_img"
-            style="background-image: url('../img/homes/${data.fileList}')"
+            style="background-image: url('../../img/homes/${data.fileList[0]}')"
           >
             <div id="btn_like">
               <button></button>
@@ -59,10 +59,10 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
               <div class="our-team">
                 <div class="picture">
-                  <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+                  <img class="img-fluid" src="../../img/user/${data.host.mPhoto}">
                 </div>
                 <div class="team-content">
-                  <h3 class="name">Michele Miller</h3>
+                  <h3 class="name">${data.host.mName}</h3>
                   <h4 class="title">HOST</h4>
                 </div>
                 <ul class="social">
@@ -90,89 +90,29 @@
                   <div class="up" style="background-image: url(${i.fPhoto}); background-repeat: no-repeat; background-color: salmon;">
                   </div>
                   <div class="down">
-                    <span>${i.where}</span>
+                    <span>${i.fType}</span>
                   </div>
                 </div>
+                <c:set var="Pictures9" value="false" />
               </c:when>
               <c:when test="${status.count > 8}">
                 <div class="jnj2">
                   <div class="up" style="background-image: url(${i.fPhoto}); background-repeat: no-repeat; background-color: salmon;">
                   </div>
                   <div class="down">
-                    <span>${i.where}</span>
+                    <span>${i.fType}</span>
                   </div>
                 </div>
+                <c:set var="Pictures9" value="true" />
               </c:when>
             </c:choose>
           </c:forEach>
-          <div class="jnj">
-            <div class="up" style="background-image: url(); background-repeat: no-repeat; background-color: salmon;">
-              
-            </div>
-            <div class="down">
-              <span>거실</span>
-            </div>
-          </div>
-          <div class="jnj">
-            <div class="up" style="background-image: url(); background-repeat: no-repeat; background-color: salmon;">
-              
-            </div>
-            <div class="down">
-              <span>거실</span>
-            </div>
-          </div>
-          <div class="jnj">
-            <div class="up" style="background-image: url(); background-repeat: no-repeat; background-color: salmon;">
-              
-            </div>
-            <div class="down">
-              <span>거실</span>
-            </div>
-          </div>
-          <div class="jnj">
-            <div class="up" style="background-image: url(); background-repeat: no-repeat; background-color: salmon;">
-              
-            </div>
-            <div class="down">
-              <span>거실</span>
-            </div>
-          </div>
-          <div class="jnj">
-            <div class="up" style="background-image: url(); background-repeat: no-repeat; background-color: salmon;">
-              
-            </div>
-            <div class="down">
-              <span>거실</span>
-            </div>
-          </div>
-          <div class="jnj">
-            <div class="up" style="background-image: url(); background-repeat: no-repeat; background-color: salmon;">
-              
-            </div>
-            <div class="down">
-              <span>거실</span>
-            </div>
-          </div>
-          <div class="jnj">
-            <div class="up" style="background-image: url(); background-repeat: no-repeat; background-color: salmon;">
-              
-            </div>
-            <div class="down">
-              <span>거실</span>
-            </div>
-          </div>
-          <div class="jnj2">
-            <div class="up" style="background-image: url(); background-repeat: no-repeat; background-color: salmon;">
-              
-            </div>
-            <div class="down">
-              <span>거실</span>
-            </div>
-          </div>
         </div>
-        <div id="more_details">
-          <span style="font-size: 16px; font-weight: 800; color:#914669; margin-left: 8px; cursor: pointer;" onclick="show_all()">사진 모두보기</span>
-        </div>
+        <c:if test="${Picutres9 eq true}">
+          <div id="more_details">
+            <span style="font-size: 16px; font-weight: 800; color:#914669; margin-left: 8px; cursor: pointer;" onclick="show_all()">사진 모두보기</span>
+          </div>
+        </c:if>
       </div>
       <!--편의시설-->
       <div id="facilities">
@@ -301,7 +241,6 @@
         <!--지도-->
         <div id="map_wrapper">
           <div id="map">
-
           </div>
         </div>
         <div class="l_explain" style="margin: 50px 0;">
@@ -328,6 +267,7 @@
                     ${i.cContent}
                   </div>
                 </div>
+                <c:set var="Comments7" value="false" />
               </c:when>
               <c:when test="${status.count > 6}">
                 <div class="mention2">
@@ -339,13 +279,16 @@
                     ${i.cContent}
                   </div>
                 </div>
-                <div id="more_comments">
-                  <span style="font-size: 16px; font-weight: 800; color:#914669; margin-left: 8px; cursor: pointer;" onclick="show_all_mention()">후기 모두보기</span>
-                </div>
+                <c:set var="Comments7" value="ture" />
               </c:when>
             </c:choose>
           </c:forEach>
         </div>
+        <c:if test="${Comments7 eq 'true'}">
+          <div id="more_comments">
+            <span style="font-size: 16px; font-weight: 800; color:#914669; margin-left: 8px; cursor: pointer;" onclick="show_all_mention()">후기 모두보기</span>
+          </div>
+        </c:if>
       </div>
       <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--호스트 소개-->
@@ -356,18 +299,18 @@
         <div id="meet-host">
           <div id="host_photo">
             <div id="img">
-              <img alt="" src="https://via.placeholder.com/250x250" >
+              <img alt="" src="../../img/user/${data.host.mPhoto}" >
             </div>
             <div id="host_name">
-              ${data.hEmail}
+              ${data.host.mName}
             </div>
           </div>
           <div id="host_info">
             <div style="font-weight: bold; margin-bottom: 30px; margin-top: 10px;">
-              안녕하세요. 저는 ${data.hEmail}입니다.
+              안녕하세요. 저는 ${data.host.mName}입니다.
             </div>
             <div style="margin-bottom: 60px;">
-              ${data.hEmail}
+              ${data.host.mIntroduce}
             </div>
             <div style="font-weight: bold; margin-bottom: 30px;">
               게스트와의 교류
@@ -378,7 +321,7 @@
           </div>
           <div id="host_info_2">
             <div style="margin-top: 10px;">
-              회원가입일 : ${data.hEmail}
+              연령 : ${data.host.mBirthday}
             </div>
             <div>
               응답률 : 100%
@@ -392,21 +335,38 @@
       <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--숙소 이용규칙-->
       <div id="rule">
-        <div style="margin-bottom: 60px;">
+        <div style="width: 300px;">
           <span style="font-size: 32px; font-weight: 800; color: #484848; margin-left: 8px;">숙소 이용규칙</span>
         </div>
-        <div>
+        <div id="rule_detail">
           <div>
             예약시 호스트가 정한 숙소 이용규칙에 동의하셔야 합니다.
           </div>
           <ul>
             <li>체크인 : ${data.vo.dCheckin}</li>
             <li>체크아웃 : ${data.vo.dCheckout}</li>
+              <c:if test="${data.vo.dSelfcheckin eq 'y'}">
+                <li>열쇠보관함으로 셀프 체크인</li>
+              </c:if>
           </ul>
         </div>
       </div>
+      <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--환불정책-->
-      <div></div>
+      <div id="refund">
+        <div style="width: 300px;">
+          <span style="font-size: 32px; font-weight: 800; color: #484848; margin-left: 8px;">환불 정책</span>
+        </div>
+        <div id="refund_rule">
+          일반 환불 정책. 체크인 5일 전까지 취소하면 전액이 환불됩니다. <br>체크인 전 5일 이내에 취소하면 첫 1박 요금은 환불되지 않으나, <br/>잔여 숙박 요금의 50%가 환불됩니다.
+        </div>
+      </div>
+      <!--평점이 높은 다른 숙소-->
+      <div id="another">
+        <div style="width: 300px;">
+          <span style="font-size: 32px; font-weight: 800; color: #484848; margin-left: 8px;">평점이 높은 다른 숙소</span>
+        </div>
+      </div>
     </div>
   </body>
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc48e45438f857c2a644f3be69b5b9b5"></script>

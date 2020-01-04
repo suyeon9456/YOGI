@@ -1,6 +1,7 @@
 package bean;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -8,9 +9,9 @@ import org.apache.ibatis.session.SqlSession;
 import MyBatis.MyBatisFactory;
 
 public class HomesDao {
-	
-SqlSession sqlSession;
-	
+
+	SqlSession sqlSession;
+
 	public HomesDao() {
 		try {
 			sqlSession = MyBatisFactory.getFactory().openSession();
@@ -18,38 +19,47 @@ SqlSession sqlSession;
 			e.printStackTrace();
 		}
 	}
-	
+
 	public List<HomesVo> goHomes(String findStr) {
 		List<HomesVo> list = new ArrayList<HomesVo>();
-		
+
 		System.out.println(findStr + "findStr");
-		
+
 		try {
 			list = sqlSession.selectList("homes.homes_search", findStr);
-			
-			for(int i = 0; i < list.size(); i++) {
+
+			for (int i = 0; i < list.size(); i++) {
 				List<HFilesVo> photoList = sqlSession.selectList("homes.homes_photo", list.get(i).hSerial);
 				list.get(i).setFileList(photoList);
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			return list;
 		}
 	}
-	
+
 	public HomesVo select(String serial) {
 		HomesVo vo = new HomesVo();
 		int one = Integer.parseInt(serial);
-		try{
+		try {
+			// 숙소 관련 정보
 			vo = sqlSession.selectOne("homes.select", one);
 			vo.setVo(sqlSession.selectOne("homes.details", one));
-			//TODO 댓글 받아와야 해
+			// TODO 댓글에 각자의 사진 안 가져왔음
 			vo.setCommentsList(sqlSession.selectList("homes.comment", one));
-		}catch(Exception ex) {
+			// 호스트 정보
+			vo.setHost(sqlSession.selectOne("homes.host", vo.gethEmail()));
+			// 현재년도
+			int year = Calendar.getInstance().get(Calendar.YEAR);
+			String birth = vo.getHost().getmBirthday();
+			int b_year = Integer.parseInt(birth.substring(0, 4));
+			int age = (int) Math.floor((year - b_year)/10);
+			vo.getHost().setmBirthday(age + "0대");
+		} catch (Exception ex) {
 			ex.printStackTrace();
-		}finally {
+		} finally {
 			return vo;
 		}
 	}
