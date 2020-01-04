@@ -53,4 +53,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
 	<select id="comment" parameterType="Integer" resultType="bean.CommentsVo">
 		SELECT * FROM COMMENTS WHERE CPSERIAL = #{_parameter} 
 	</select>
+	
+	<!--숙소 호스트 정보-->	
+	<select id="host" parameterType="String" resultType="bean.UserVo">	
+		SELECT mIntroduce, mPhoto, mName, mBirthday FROM MEMBER WHERE MEMAIL = #{_parameter}	
+	</select>	
 </mapper>
