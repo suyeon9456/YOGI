@@ -66,6 +66,13 @@
 	margin:0 auto;
 }
 
+#filter_plus #filter_close{
+	font-size: 24px;
+	color:#767676;
+	font-weight: normal;
+	border:0;
+}
+
 #filter_plus .f_top_box h2{
 	display: inline-block;
 	height: 35px;
