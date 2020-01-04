@@ -92,7 +92,6 @@ public class HomesController {
 		HomesVo vo = dao.select(serial);	
 		mv.setViewName("homes/home_details");
 		mv.addObject("data", vo);
-		System.out.println(vo.getVo().getdKitchen());
 		return mv;			
 	}
 }

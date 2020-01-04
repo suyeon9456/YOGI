@@ -18,16 +18,27 @@ public class HomesVo {
 	List<HFilesVo> fileList;
 	List<CommentsVo> commentsList;
 	DetailsVo vo;
-
+	UserVo host;
+	
 	float grade = 0;// 평점을 위한 변수
+	
+
+	public void setHost(UserVo host) {
+		this.host = host;
+	}
+
+	public UserVo getHost() {
+		return this.host;
+	}
 
 	public int gethPrice() {
 		return hPrice;
 	}
-	
+
 	public void sethPrice(int hPrice) {
 		this.hPrice = hPrice;
 	}
+
 	public DetailsVo getVo() {
 		return vo;
 	}
@@ -44,12 +55,12 @@ public class HomesVo {
 		return hLatitude;
 	}
 
-	public void sethLogitude(String hLongitude) {
-		this.hLongitude = hLongitude;
-	}
-
 	public String gethLongitude() {
 		return hLongitude;
+	}
+	
+	public void sethLongitude(String hLongitude) {
+		this.hLongitude = hLongitude;
 	}
 
 	public int gethSerial() {
@@ -131,5 +142,4 @@ public class HomesVo {
 	public void setGrade(float grade) {
 		this.grade = grade;
 	}
-
 }
