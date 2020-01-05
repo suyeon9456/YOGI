@@ -105,7 +105,7 @@
 				<div class = "g_type_tit">성인</div>
 				<div class = "g_type_con">
 					<input type = "button" value = "-" id = "adult_minus" onclick = "gTypeMinus(1);"/>
-					<span class = "g_type_num" id = "adult_num">0</span>
+					<span class = "g_type_num" id = "adult_num">${(empty param.dPeople) ? 0 : param.dPeople }</span>
 					<input type = "button" value = "+" id = "adult_plus" onclick = "gTypePlus(1);"/>
 				</div><!-- g_type_con close -->
 			</div><!-- g_type close -->

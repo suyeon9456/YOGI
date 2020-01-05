@@ -62,20 +62,21 @@ public class HomesController {
 	public ModelAndView goSearch(SearchVo sVo) {
 		ModelAndView mv = new ModelAndView();
 		
+		List<HomesVo> listOri = dao.goHomes();
 		List<HomesVo> list = dao.goSearch(sVo);
 		List<Integer> price = new ArrayList<Integer>();
 		
-		if(list.size() > 0) {
-			int sumPirce = 0;
-			for(int i = 0; i < list.size(); i++) {
-				price.add(list.get(i).gethPrice());
-				sumPirce += list.get(i).gethPrice();
-			}
-			
-			float avgPrice = sumPirce/price.size();
-			int minPrice = Collections.min(price);
-			int maxPrice = Collections.max(price);
-			
+		int sumPirce = 0;
+		for(int i = 0; i < listOri.size(); i++) {
+			price.add(listOri.get(i).gethPrice());
+			sumPirce += listOri.get(i).gethPrice();
+		}
+		
+		float avgPrice = sumPirce/price.size();
+		int minPrice = Collections.min(price);
+		int maxPrice = Collections.max(price);
+		
+		if(list.size() > 0) {			
 			mv.addObject("list",list);
 			mv.addObject("list_size", list.size());
 			mv.addObject("minPrice",minPrice);

@@ -12,7 +12,25 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
 		WHERE c.cPserial = h.hSerial
 		GROUP BY c.cPserial) , 1 ) grade
 		FROM HOUSE h
-		WHERE hEmail like '%${findStr}%' or hName like '%${findStr}%' or hAddress like '%${findStr}%'
+		ORDER BY grade DESC NULLS LAST
+	</select>
+	
+	<!-- 필터적용 및 검색 숙소 리스트 -->
+	<select id = "homes_find" parameterType="bean.SearchVo" resultType="bean.HomesVo">
+		SELECT hSerial, hEmail, hName, hContent, hType, hAddress, hPrice,
+		ROUND( (SELECT (( SUM(c.cClean) + SUM(c.cService) + SUM(c.cLocation) )/3)/COUNT(*) 
+		FROM COMMENTS c
+		WHERE c.cPserial = h.hSerial
+		GROUP BY c.cPserial) , 1 ) grade
+		FROM HOUSE h
+		JOIN DETAILS d
+		ON h.hSerial = d.dPserial
+		WHERE h.hType like '%${hType}%' and <![CDATA[d.dPeople >= ${dPeople} and h.hPrice <= ${hPrice}
+		and d.dBedroom >= ${dBedroom} and d.dBed >= ${dBed} and d.dBathroom >= ${dBathroom}]]> 
+		and d.dKitchen like '%${dKitchen}%' and d.dAc like '%${dAc}%' and d.dWifi like '%${dWifi}%' 
+		and d.dTv like '%${dTv}%' and d.dWasher like '%${dWasher}%' and d.dParking like '%${dParking}%' 
+		and d.dAmenity like '%${dAmenity}%' and d.dHdrier like '%${dHdrier}%' and d.dSelfcheckin like '%${dSelfcheckin}%' 
+		and (h.hEmail like '%${findStr}%' or h.hName like '%${findStr}%' or h.hAddress like '%${findStr}%')
 		ORDER BY grade DESC NULLS LAST
 	</select>
 	
@@ -36,9 +54,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
 		SELECT * FROM COMMENTS WHERE CPSERIAL = #{_parameter} 
 	</select>
 	
-	
-	<!--숙소 호스트 정보-->
-	<select id="host" parameterType="String" resultType="bean.UserVo">
-		SELECT mIntroduce, mPhoto, mName, mBirthday FROM MEMBER WHERE MEMAIL = #{_parameter}
-	</select>
+	<!--숙소 호스트 정보-->	
+	<select id="host" parameterType="String" resultType="bean.UserVo">	
+		SELECT mIntroduce, mPhoto, mName, mBirthday FROM MEMBER WHERE MEMAIL = #{_parameter}	
+	</select>	
 </mapper>

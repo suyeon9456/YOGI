@@ -222,7 +222,7 @@
 						<div class = "f_type_tit">침실 수</div>
 						<div class = "f_type_con">
 							<input type = "button" value = "-" id = "bedroom_minus" onclick = "fTypeMinus(1);"/>
-							<span class = "f_type_num" id = "bedroom_num">0</span>
+							<span class = "f_type_num" id = "bedroom_num">${(empty param.dBedroom) ? 0 : param.dBedroom }</span>
 							<input type = "button" value = "+" id = "bedroom_plus" onclick = "fTypePlus(1);"/>
 						</div><!-- g_type_con close -->
 					</div><!-- g_type close -->
@@ -231,7 +231,7 @@
 						<div class = "f_type_tit">침대 수</div>
 						<div class = "f_type_con">
 							<input type = "button" value = "-" id = "bed_minus" onclick = "fTypeMinus(2);"/>
-							<span class = "f_type_num" id = "bed_num">0</span>
+							<span class = "f_type_num" id = "bed_num">${(empty param.dBed) ? 0 : param.dBed }</span>
 							<input type = "button" value = "+" id = "bed_plus" onclick = "fTypePlus(2);"/>
 						</div><!-- g_type_con close -->
 					</div><!-- g_type close -->
@@ -240,7 +240,7 @@
 						<div class = "f_type_tit">욕실 수</div>
 						<div class = "f_type_con">
 							<input type = "button" value = "-" id = "bathroom_minus" onclick = "fTypeMinus(3);"/>
-							<span class = "f_type_num" id = "bathroom_num">0</span>
+							<span class = "f_type_num" id = "bathroom_num">${(empty param.dBathroom) ? 0 : param.dBathroom }</span>
 							<input type = "button" value = "+" id = "bathroom_plus" onclick = "fTypePlus(3);"/>
 						</div><!-- f_type_con close -->
 					</div><!-- f_type close -->
