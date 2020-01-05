@@ -62,9 +62,6 @@ public class HomesController {
 	public ModelAndView goSearch(SearchVo sVo) {
 		ModelAndView mv = new ModelAndView();
 		
-		List<HomesVo> list = dao.goSearch(sVo);
-		List<Integer> price = new ArrayList<Integer>();
-		
 		List<HomesVo> listOri = dao.goHomes();
 		List<HomesVo> list = dao.goSearch(sVo);
 		List<Integer> price = new ArrayList<Integer>();
