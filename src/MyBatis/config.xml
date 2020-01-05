@@ -22,6 +22,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="/MyBatis/homes.xml" />
 		<mapper resource="/MyBatis/user.xml" />
+		<mapper resource="/MyBatis/host.xml" />
 	</mappers>
 
 

@@ -66,6 +66,7 @@ public class HomesDao {
 			// 숙소 관련 정보
 			vo = sqlSession.selectOne("homes.select", one);
 			vo.setVo(sqlSession.selectOne("homes.details", one));
+			vo.setFileList(sqlSession.selectList("homes.homes_photo",one));
 			// TODO 댓글에 각자의 사진 안 가져왔음
 			vo.setCommentsList(sqlSession.selectList("homes.comment", one));
 			// 호스트 정보
@@ -79,6 +80,7 @@ public class HomesDao {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
+			sqlSession.clearCache();
 			return vo;
 		}
 	}

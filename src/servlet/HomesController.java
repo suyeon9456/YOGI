@@ -76,7 +76,7 @@ public class HomesController {
 		int minPrice = Collections.min(price);
 		int maxPrice = Collections.max(price);
 		
-		if(list.size() > 0) {			
+		if(list.size() > 0) {	
 			mv.addObject("list",list);
 			mv.addObject("list_size", list.size());
 			mv.addObject("minPrice",minPrice);
@@ -98,7 +98,6 @@ public class HomesController {
 		HomesVo vo = dao.select(serial);	
 		mv.setViewName("homes/home_details");
 		mv.addObject("data", vo);
-		System.out.println(vo.getVo().getdKitchen());
 		return mv;			
 	}
 }

@@ -36,7 +36,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
 	
 	<!-- 숙소 사진들 -->
 	<select id = "homes_photo" parameterType="Integer" resultType="bean.HFilesVo">
-		select fPhoto from hFiles where fPserial = #{_parameter}
+		select fPhoto, fType from hFiles where fPserial = #{_parameter}
 	</select>
 	
 	<!-- 숙소 검색 -->

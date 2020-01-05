@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,6 @@
 <style type="text/css">
     <%@include file="../css/header.css" %>
 </style> 
-
 </head>
 <body>
 <form method="get" name = "header_frm">
@@ -40,7 +39,7 @@
 						</c:when>
 						
 						<c:when test="${sessionScope.mEmail ne null}">
-							<li><a href = "#">호스트 등록하기</a></li>
+							<li><a href = "http://localhost:9999/YOGI_J/host/become-a-host">호스트 등록하기</a></li>
 							<li><a href = "#">찜 목록</a></li>
 							<li><a href = "#">여행 관리</a></li>
 							<li><a href = "#">메시지</a></li>
@@ -50,10 +49,22 @@
 			</div><!-- menu_box close -->
 			
 			<c:if test="${sessionScope.mEmail ne null }">
-				<div id = "mypage_img">
-					<img src="../img/icon/user.png"/>
-				</div><!-- mypage_img close -->			
-			</c:if>
+				<c:if test="${sessionScope.p_img ne null}">
+					<div id = "mypage_img">
+						<img src="${sessionScope.p_img }"/>
+					</div>
+				</c:if>
+				<c:if test="${sessionScope.mPhoto ne null}">
+					<div id = "mypage_img">
+						<img src="../img/user/${sessionScope.mPhoto }"/>
+					</div>
+				</c:if>
+				<c:if test="${sessionScope.p_img eq null && sessionScope.mPhoto eq null }">
+					<div id = "mypage_img">
+						<img src="../img/icon/user.png"/>
+					</div>
+				</c:if>
+			</c:if><!-- mypage_img close -->
 			
 		</div><!-- main_box close -->
 		

@@ -8,7 +8,6 @@
 <title>가격 범위 선택</title>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <style>
-
 #price .box{
 	width:400px;
 	height:250px;
@@ -18,13 +17,11 @@
 	color:#484848;
 	font-size: 14px;
 }
-
 #price .p_top_box{
 	text-align: center;
 	padding : 16px 0;
 	height: 145px;
 }
-
 #price .p_type{
 	width: 85%;
 	margin:10px auto;
@@ -44,11 +41,9 @@
     border-radius: 300px; /* iOS */
    transition: background 450ms ease-in;
   }
-
   input[type=range]:focus {
     outline: none; 
   }
-
   input[type=range]::-webkit-slider-thumb{
     -webkit-appearance: none;
     width: 12px;
@@ -71,25 +66,21 @@
 #price .p_arrow{
 	border-radius: 50%;
 }
-
 #price #s_bottom_box{
 	overflow: hidden;
 	margin-top: 20px;
 }
-
 #price #s_bottom_box_r{
 	display: inline-block;
 	width: 50%;
 	text-align: left;
 	float: left;
 }
-
 #price #s_bottom_box_l{
 	display: inline-block;
 	width: 50%;
 	text-align: right;
 }
-
 #price .slider_bottom{
  	display:inline-block;
 	border-radius:5px;
@@ -105,26 +96,22 @@
  	text-align: center;
  	padding:10px 0;
 }
-
 #price .btns_box{
 	width: 85%;
 	margin: 0 auto;
 	overflow: hidden;
 }
-
 #price .btn_left{
 	display:inline-block;
 	float: left;
 	width: 50%;
 	text-align: left;
 }
-
 #price .btn_right{
 	display: inline-block;
 	text-align: right;
 	width: 50%;
 }
-
 #price .p_bottom_box input[type=button]{
 	background-color: salmon;
 	border:0;
@@ -134,13 +121,11 @@
 	color: #fff;
 	font-weight: bold;
 }
-
 #price .p_type_con img{
 	position: absolute;
 	top:13px;
 	left:25px;
 }
-
 </style>
 </head>
 <body>
@@ -196,17 +181,13 @@ const price =  document.getElementById("price");
   
 const pSliderBar = document.getElementById("p_slider_bar");
 const priceArrow = document.getElementById("price_arrow");
-
 const pTypeCancel = document.getElementById("p_type_cancel");
 const pTypeSave = document.getElementById("p_type_save");
-
 const minPrice = '${minPrice}';
 const maxPrice = '${maxPrice}';
-
 function numbeComma(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
 pSliderBar.onchange = function(){
 	var val = pSliderBar.value;
 	var per = ${maxPrice - minPrice};
@@ -215,7 +196,6 @@ pSliderBar.onchange = function(){
     var valNow = numbeComma(val);
     priceArrow.innerHTML = valNow + "원";
 }
-
 function priceBtn(num){
 	if(num == 1){
 		pSliderBar.value = '${minPrice}';

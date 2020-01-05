@@ -16,36 +16,30 @@
 	color:#484848;
 	font-size: 14px;
 }
-
 #type .t_top_box{
 	text-align: center;
 	padding : 16px 0;
 }
-
 #type .t_type{
 	width: 85%;
 	margin:10px auto;
 	overflow: hidden;
 }
-
 #type .t_top_box_txt{
 	width: 80%;
 	float: left;
 }
-
 #type .t_type_tit{
 	text-align: left;
 	height: 35px;
 	line-height: 35px;
 	font-size: 14px;
 }
-
 #type .t_type_ex{
 	text-align: left;
 	color:#717171;	
 	font-size: 13px;
 }
-
 #type .t_type_con{
 	position:relative;
 	text-align:right;
@@ -53,11 +47,9 @@
 	width: 20%;
 	padding: 10px 0;
 }
-
 #type input[type=checkbox]{
 	display: none;
 }
-
 #type input[type=checkbox] + label{
 	display:inline-block;
 	background-color:#fff;
@@ -67,31 +59,26 @@
 	height: 35px;
 	cursor: pointer;
 }
-
 #type .t_bottom_box{
  	text-align: center;
  	padding:10px 0;
 }
-
 #type .btns_box{
 	width: 85%;
 	margin: 0 auto;
 	overflow: hidden;
 }
-
 #type .btn_left{
 	display:inline-block;
 	float: left;
 	width: 50%;
 	text-align: left;
 }
-
 #type .btn_right{
 	display: inline-block;
 	text-align: right;
 	width: 50%;
 }
-
 #type .t_bottom_box input[type=button]{
 	background-color:salmon;
 	border:0;
@@ -101,7 +88,6 @@
 	color: #fff;
 	font-weight: bold;
 }
-
 #type .t_type_con img{
 	position: absolute;
 	top:13px;

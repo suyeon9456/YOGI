@@ -17,13 +17,11 @@
 	background: rgba(0, 0, 0, 0.75);
 	font-family: var(--font-button-font-family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif);
 }
-
 #filter_plus .box_table{
 	width: 100%;
     height: 100%;
 	display: table;
 }
-
 #filter_plus .box{
 	display: table-cell;
 	vertical-align: middle;
@@ -31,7 +29,6 @@
 	font-size: 14px;
 	color:#484848;
 }
-
 #filter_plus .f_top_box{
 	width:780px;
 	height:65px;
@@ -42,19 +39,16 @@
 	padding : 16px 0;
 	border-bottom: 1px solid #eee;
 }
-
 #filter_plus .top_tit{
 	display:inline-block;
 	width: 88%;
 	text-align: left;
 }
-
 #filter_plus .top_btn{
 	display:inline-block;
 	width: 10%;
 	text-align: right;
 }
-
 #filter_plus .f_top_box input[type=button]{
 	background-color:#fff;
 	border:0;
@@ -65,14 +59,12 @@
 	font-weight: bold;
 	margin:0 auto;
 }
-
 #filter_plus #filter_close{
 	font-size: 24px;
 	color:#767676;
 	font-weight: normal;
 	border:0;
 }
-
 #filter_plus .f_top_box h2{
 	display: inline-block;
 	height: 35px;
@@ -80,7 +72,6 @@
 	margin:0 auto;
 	text-align: center;
 }
-
 #filter_plus .f_center_box{
 	width: 780px;
 	height: 550px;
@@ -90,18 +81,15 @@
 	padding: 10px 45px;
 	box-sizing: border-box;
 }
-
 #filter_plus .f_center_box h2 ,#filter_plus .f_center_box h3{
 	text-align: left;
 }
-
 #filter_plus .f_type{
 	width: 95%;
 	margin:10px auto;
 	overflow: hidden;
 	color:#484848;
 }
-
 #filter_plus .f_type_tit{
 	display: inline-block;
 	width: 50%;
@@ -110,14 +98,12 @@
 	height: 35px;
 	line-height: 35px;
 }
-
 #filter_plus .f_type_con{
 	text-align:right;
 	display: inline-block;
 	width: 50%;
 	height: 42px;
 }
-
 #filter_plus .f_center_box input[type=button]{
 	border:0;
 	background-color:#fff;
@@ -127,28 +113,23 @@
 	height: 35px;
 	font-size: 20px;
 }
-
 #filter_plus .f_type_num{
 	display:inline-block;
 	min-width: 30px;
 	text-align: center;
 }
-
 #filter_plus .f_basic_type{
 	width: 95%;
 	margin:10px auto;
 	overflow: hidden;
 }
-
 #filter_plus .f_type_tit{
 	height: 35px;
 	line-height: 35px;
 }
-
 #filter_plus input[type=checkbox]{
 	display: none;
 }
-
 #filter_plus input[type=checkbox] + label{
 	display:inline-block;
 	background-color:#fff;
@@ -158,7 +139,6 @@
 	height: 35px;
 	cursor: pointer;
 }
-
 #filter_plus .f_bottom_box{
 	width: 780px;
 	height:65px;
@@ -168,26 +148,22 @@
 	padding : 10px 0;
 	box-sizing: border-box;
 }
-
 #filter_plus .box_contents{
 	width: 95%;
 	margin: 0 auto;
 	overflow: hidden;
 }
-
 #filter_plus .btn_left{
 	display:inline-block;
 	float: left;
 	width: 50%;
 	text-align: left;
 }
-
 #filter_plus .btn_right{
 	display: inline-block;
 	text-align: right;
 	width: 50%;
 }
-
 #filter_plus .f_bottom_box input[type=button]{
 	background-color:salmon;
 	border:0;

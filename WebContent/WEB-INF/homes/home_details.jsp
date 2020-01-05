@@ -30,10 +30,8 @@
               </div>
             </div>
           </div>
-          <div
-            id="main_img"
-            style="background-image: url('../../img/homes/${data.fileList[0]}')"
-          >
+          <div id="main_img">
+          	<img alt="" src="../../img/homes/${data.fileList[0].fPhoto}">
             <div id="btn_like">
               <button></button>
             </div>
@@ -46,9 +44,9 @@
         <div id="explain">
           <div style="font-size: 16px; font-weight: 800;">
             <span>인원 ${data.vo.dPeople}명</span>
-            <span>침실 ${data.vo.dBedroom}개</span>
-            <span>침대 ${data.vo.dBed}개</span>
-            <span>욕실 ${data.vo.dBathroom}개</span>
+            <span style="margin-left: 10px">침실 ${data.vo.dBedroom}개</span>
+            <span style="margin-left: 10px">침대 ${data.vo.dBed}개</span>
+            <span style="margin-left: 10px">욕실 ${data.vo.dBathroom}개</span>
           </div>
           <div style="font-size: 18px;">
             ${data.hContent}
@@ -83,11 +81,11 @@
           <span style="font-size: 32px; font-weight: 800; color: #484848; margin-left: 8px;">이 숙소 둘러보기</span>
         </div>
         <div id="pictures">
-          <c:forEach var="i" items="${data.fileList}" varStatus="status">
+          <c:forEach var="i" items="${data.fileList}" varStatus="status" begin="1">
             <c:choose>
               <c:when test="${status.count < 9}">
                 <div class="jnj">
-                  <div class="up" style="background-image: url(${i.fPhoto}); background-repeat: no-repeat; background-color: salmon;">
+                  <div class="up" style="background-image: url('../../img/homes/${i.fPhoto}'); background-repeat: no-repeat; background-size:cover;">
                   </div>
                   <div class="down">
                     <span>${i.fType}</span>
@@ -97,7 +95,7 @@
               </c:when>
               <c:when test="${status.count > 8}">
                 <div class="jnj2">
-                  <div class="up" style="background-image: url(${i.fPhoto}); background-repeat: no-repeat; background-color: salmon;">
+                  <div class="up" style="background-image: url('../../img/homes/${i.fPhoto}'); background-repeat: no-repeat; background-size:cover;">
                   </div>
                   <div class="down">
                     <span>${i.fType}</span>
@@ -306,7 +304,7 @@
             </div>
           </div>
           <div id="host_info">
-            <div style="font-weight: bold; margin-bottom: 30px; margin-top: 10px;">
+            <div style="font-weight: bold; margin-bottom: 30px;">
               안녕하세요. 저는 ${data.host.mName}입니다.
             </div>
             <div style="margin-bottom: 60px;">
@@ -346,7 +344,7 @@
             <li>체크인 : ${data.vo.dCheckin}</li>
             <li>체크아웃 : ${data.vo.dCheckout}</li>
               <c:if test="${data.vo.dSelfcheckin eq 'y'}">
-                <li>열쇠보관함으로 셀프 체크인</li>
+                <li>열쇠보관함(디지털 도어록)으로 셀프 체크인</li>
               </c:if>
           </ul>
         </div>
@@ -361,6 +359,7 @@
           일반 환불 정책. 체크인 5일 전까지 취소하면 전액이 환불됩니다. <br>체크인 전 5일 이내에 취소하면 첫 1박 요금은 환불되지 않으나, <br/>잔여 숙박 요금의 50%가 환불됩니다.
         </div>
       </div>
+      <hr style="width: 95%; text-align: center; border-top: 1px solid #eee;" />
       <!--평점이 높은 다른 숙소-->
       <div id="another">
         <div style="width: 300px;">
