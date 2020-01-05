@@ -148,20 +148,20 @@
 	<div class = "box">
 		<div class = "p_top_box">
 			<div class = "p_type">
-				<div class = "p_type_tit">평균 1박 요금은 <span><fmt:formatNumber value="${avgPrice}" pattern="#,###" />원</span> 입니다.</div>
+				<div class = "p_type_tit">평균 1박 요금은 <span><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${avgPrice}" /></span>입니다.</div>
 				<div class = "p_type_con">
 					<!-- 슬라이더 -->
 					<div class="price_slider">
 						<div id = "s_top_box">
-						    <span id="price_arrow" class="p_arrow"><fmt:formatNumber value="${(empty param.hPrice) ? maxPrice : param.hPrice}" pattern="#,###" />원</span>
+						    <span id="price_arrow" class="p_arrow"><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${minPrice}" /></span>
 						</div>
-					    <input id="p_slider_bar" class="slider_bar" type="range" value="${(empty param.hPrice) ? maxPrice : param.hPrice }" min="${minPrice}" max="${maxPrice}"/> 
+					    <input id="p_slider_bar" class="slider_bar" type="range" value="10000" min="${minPrice}" max="${maxPrice}"/> 
 					    <div id = "s_bottom_box">
 						    <div id = "s_bottom_box_r">
-							    <span id = "min_price" class = "slider_bottom" onclick = "priceBtn(1)"><fmt:formatNumber value="${minPrice}" pattern="#,###" />원</span>
+							    <span id = "min_price" class = "slider_bottom" onclick = "priceBtn(1)"><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${minPrice}" /></span>
 						    </div>
 						    <div id = "s_bottom_box_l">
-							    <span id = "max_price" class = "slider_bottom" onclick = "priceBtn(2)"><fmt:formatNumber value="${maxPrice}" pattern="#,###" />원</span>
+							    <span id = "max_price" class = "slider_bottom" onclick = "priceBtn(2)"><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${maxPrice}" /></span>
 						    </div>
 					    </div>
 				  	</div>
@@ -201,7 +201,6 @@ const pTypeCancel = document.getElementById("p_type_cancel");
 const pTypeSave = document.getElementById("p_type_save");
 
 const minPrice = '${minPrice}';
-const maxPrice = '${maxPrice}';
 
 function numbeComma(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -213,7 +212,7 @@ pSliderBar.onchange = function(){
     var perR = (val - '${minPrice}')/per * 100;
     pSliderBar.style.background = "linear-gradient(to right, #ccc 0%, #ccc " + perR + "%, #eee " + perR + "%, #eee 100%)";
     var valNow = numbeComma(val);
-    priceArrow.innerHTML = valNow + "원";
+    priceArrow.innerHTML = "￦" + valNow;
 }
 
 function priceBtn(num){

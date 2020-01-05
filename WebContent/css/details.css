@@ -1,7 +1,10 @@
 @charset "UTF-8";
+#home_details{
+	margin-top: 10px;
+}
 #home_details #main {
   width: 100%;
-  height: 500px;
+/*   height: 500px; */
   padding-left: 24px;
   padding-right: 24px;
   box-sizing: border-box;
@@ -9,7 +12,7 @@
 }
 #home_details #main #main_wrap {
   width: 100%;
-  height: 100%;
+/*   height: 100%; */
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -24,7 +27,7 @@
   padding-left: 8px;
   margin-right: 8px;
   background-color: #f2f2f2;
-  height: 100%;
+/*   height: 100%; */
   float: left;
 }
 #home_details #main #main_wrap #headline #content {
@@ -32,13 +35,13 @@
   color: #484848;
 }
 #home_details #main #main_wrap #headline #content span {
-  font-size: 28px;
+  font-size: 38px;
 }
 #home_details #main #main_wrap #headline #content div {
   margin-bottom: 20px;
 }
 #home_details #main #main_wrap #main_img {
-  width: 65.5%;
+  width: 66.6%;
   position: relative;
   box-sizing: border-box;
   min-width: 658px;
@@ -46,8 +49,12 @@
   padding-right: 8px;
   background-repeat: no-repeat;
   height: 100%;
-  background-color: salmon;
 }
+#home_details #main #main_wrap #main_img img{
+top:0; left: 0;
+width: 100%;
+height: 100%;
+	}
 #home_details #main #main_wrap #main_img #btn_like {
   position: absolute;
   right: 20px;
@@ -99,9 +106,9 @@
 }
 .our-team .picture {
   display: inline-block;
-  height: 130px;
+  height: 138px;
   width: 130px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   z-index: 1;
   position: relative;
 }
@@ -135,7 +142,7 @@
 }
 .our-team .picture img {
   width: 100%;
-  height: auto;
+  height: 140px;
   border-radius: 50%;
   transform: scale(1);
   transition: all 0.9s ease 0s;
@@ -373,7 +380,13 @@
 }
 #who #meet-host #host_photo #img {
   box-sizing: border-box;
+  width: 250px;
+  height: 250px;
 }
+#who #meet-host #host_photo #img img{
+	width: 100%;
+	height: 100%;
+	}
 #who #meet-host #host_photo #host_name {
   border: 0;
   text-align: center;
@@ -384,13 +397,15 @@
 }
 #who #meet-host #host_info {
   color: #484848;
-  margin-left: 10%;
+  margin-left: 8%;
   height: 100%;
   float: left;
+  margin-top: 10px;
+  margin-bottom: 60px;
 }
 #who #meet-host #host_info_2 {
   color: #484848;
-  margin-left: 5%;
+  margin-left: 8%;
   height: 100%;
 }
 /*숙소이용규칙*/
@@ -424,4 +439,14 @@
 }
 #refund #refund_rule {
   margin-left: 20%;
+}
+/*평점이 다른 숙소*/
+#another{
+  margin: 90px auto;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 80px;
+  display: block;
+  height: auto;
+  overflow: hidden;
 }

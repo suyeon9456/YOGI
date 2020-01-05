@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,16 +119,8 @@
 				</div><!-- t_top_box_txt close -->
 				
 				<div class = "t_type_con">
-					<c:choose>
-						<c:when test="${param.hType eq '집전체' || param.hType eq '집전체 ,개인실'}">
-							<input type = "checkbox" name = "chkHType" onclick = "checkClick(1)" id = "house_chk" value = "house" checked="checked"/>
-							<label for = "house_chk"><img src="../img/icon/check.png" id = "house_chk_img" style = "display: inline-block;" for = "house_chk"/></label>
-						</c:when>
-						<c:otherwise>
-							<input type = "checkbox" name = "chkHType" onclick = "checkClick(1)" id = "house_chk" value = "house"/>
-							<label for = "house_chk"><img src="../img/icon/check.png" id = "house_chk_img" style = "display: none;" for = "house_chk"/></label>						
-						</c:otherwise>
-					</c:choose>
+					<input type = "checkbox" name = "chkHType" onclick = "checkClick(1)" id = "house_chk" value = "house"/>
+					<label for = "house_chk"><img src="../img/icon/check.png" id = "house_chk_img" style = "display: none;" for = "house_chk"/></label>
 				</div><!-- t_type_con close -->
 			</div><!-- t_type close -->
 			
@@ -140,16 +131,8 @@
 				</div><!-- t_top_box_txt close -->
 				
 				<div class = "t_type_con">
-					<c:choose>
-						<c:when test="${param.hType eq '개인실' || param.hType eq '집전체 ,개인실'}">
-							<input type = "checkbox" name = "chkHType" onclick = "checkClick(2)" id = "room_chk" value = "room" checked="checked"/>
-							<label for = "room_chk"><img src="../img/icon/check.png" id = "room_chk_img" style = "display: inline-block;"/></label>
-						</c:when>
-						<c:otherwise>
-							<input type = "checkbox" name = "chkHType" onclick = "checkClick(2)" id = "room_chk" value = "room"/>
-							<label for = "room_chk"><img src="../img/icon/check.png" id = "room_chk_img" style = "display: none;"/></label>
-						</c:otherwise>
-					</c:choose>
+					<input type = "checkbox" name = "chkHType" onclick = "checkClick(2)" id = "room_chk" value = "room"/>
+					<label for = "room_chk"><img src="../img/icon/check.png" id = "room_chk_img" style = "display: none;"/></label>
 				</div><!-- t_type_con close -->
 			</div><!-- t_type close -->
 			

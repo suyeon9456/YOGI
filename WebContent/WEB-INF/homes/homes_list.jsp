@@ -14,44 +14,6 @@
 <div id = "homes_list">
 
 	<div class = "content_title">
-		<h2>추천 도시의 숙소 보기</h2>
-	</div>
-	<div id = "city_h_list">
-		<div class= "city_box" click = "city_search(1)">
-			<div class = "city_img">
-				<img src = "" />
-			</div>
-			
-			<div class = "city_name"></div>
-		</div><!-- city_box -->
-		
-		<div class= "city_box" click = "city_search(2)">
-			<div class = "city_img">
-				<img src = "" />
-			</div>
-			
-			<div class = "city_name"></div>
-		</div><!-- city_box -->
-		
-		<div class= "city_box" click = "city_search(3)">
-			<div class = "city_img">
-				<img src = "" />
-			</div>
-			
-			<div class = "city_name"></div>
-		</div><!-- city_box -->
-		
-		<div class= "city_box" click = "city_search(4)">
-			<div class = "city_img">
-				<img src = "" />
-			</div>
-			
-			<div class = "city_name"></div>
-		</div><!-- city_box -->
-	</div><!-- city_h_list close -->
-	
-
-	<div class = "content_title">
 		<h2>BEST 숙소</h2>
 	</div>
 	<div id = "best_homes">
