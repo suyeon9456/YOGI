@@ -13,6 +13,8 @@ public class HomesVo {
 	String hLocation;
 	String hLatitude; // 위도
 	String hLongitude; // 경도
+	String hWide; //광역자치단체
+	String hBasic; //기초자치단체
 	int hPrice;
 
 	List<HFilesVo> fileList;

@@ -4,7 +4,14 @@ public class HFilesVo {
 	int fSerial;
 	int fPserial;
 	String fPhoto;
+	String fType;
 	
+	public String getfType() {
+		return fType;
+	}
+	public void setfType(String fType) {
+		this.fType = fType;
+	}
 	public int getfSerial() {
 		return fSerial;
 	}
