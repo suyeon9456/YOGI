@@ -169,13 +169,21 @@
 
 #homes_list .home_box{
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	align-content: space-around;
 }
 
 #homes_list .cont{
 	margin-bottom: 30px;
+	flex-direction: row; 
+	margin-right:16px;
+}
+
+#homes_list .cont:nth-child(5n + 0){
+	margin-bottom: 30px;
+	flex-direction: row; 
+	margin-right:0px;
 }
 
 #homes_list .slide_wrap{
@@ -342,13 +350,21 @@
 
 #search_list .home_box{
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	align-content: space-around;
 }
 
 #search_list .cont{
 	margin-bottom: 30px;
+	flex-direction: row; 
+	margin-right:16px;
+}
+
+#search_list .cont:nth-child(5n + 0){
+	margin-bottom: 30px;
+	flex-direction: row; 
+	margin-right:0px;
 }
 
 #search_list .slide_wrap{
