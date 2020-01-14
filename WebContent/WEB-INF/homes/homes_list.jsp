@@ -7,13 +7,27 @@
 <head>
 <meta charset="UTF-8">
 <title>숙소 목록</title>
-<link href = '../css/homes.css' type = 'text/css' rel = 'stylesheet'> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+    </style>
+	<style>
+		<%@include file = "../../css/homes.css" %>
+	</style> 
 </head>
 <body>
 <%@include file="../../header.jsp" %>
+<div class = "homes_banner">
+	<img src = "../img/banner/homes_banner.jpg" />
+</div>
 <div id = "homes_list">
-
 	<div class = "content_title">
+		<p>여행 날짜와 게스트 인원수를 입력하면 1박당 총 요금을 확인할 수 있습니다.</p>
+		<hr/>
 		<h2>추천 도시의 숙소 보기</h2>
 	</div>
 	<div id = "city_h_list">
