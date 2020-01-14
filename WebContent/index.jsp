@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,6 +8,7 @@ pageEncoding="UTF-8"%>
     <title>YOGI</title>
     <link href="./css/main.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <style>
       body {
         margin: 0;
@@ -17,7 +19,7 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <div id="main_header">
-      <img alt="main" src="./img/main/bg4.jpg" aria-hidden="true" />
+      <img alt="main" src="./img/main/test6.jpg" aria-hidden="true" />
 
       <div id="top_box">
         <div id="logo">
@@ -154,53 +156,14 @@ pageEncoding="UTF-8"%>
 	</div>
 	
 	<div class = "content_title">
-		<h2>인기 숙소</h2>
+		<h2>BEST 숙소</h2>
 	</div>
 	<div id = "best_homes">
-		
-		<div id = "homes_btns">
-			<div class = "best_box">
-				<img src = "https://a0.muscache.com/4ea/air/v2/pictures/746ce656-ed8d-4966-8fcb-e8c1ce4f39d7.jpg?t=r:w1200-h720-sfit,e:fjpg-c90"/>
-				<div class = "best_name">
-					<div class = "home_score">
-						<img src = ""/>
-						<span>4.5</span>
-					</div>
-					<div class = "home_address">베스트 1 큰 주소</div>
-					<div class = "home_name">베스트 1 이름</div>
-					<div class = "home_price">베스트 1 가격</div>
-				</div>
-			</div>
-			
-			<div class = "best_box">
-				<img src = "https://a0.muscache.com/im/pictures/103981930/6b9d06f7_original.jpg?aki_policy=large"/>
-				<div class = "best_name">
-					<div class = "home_score">
-						<img src = ""/>
-						<span>4.5</span>
-					</div>
-					<div class = "home_address">베스트 1 큰 주소</div>
-					<div class = "home_name">베스트 1 이름</div>
-					<div class = "home_price">베스트 1 가격</div>
-				</div>
-			</div>
-			
-			<div class = "best_box">
-				<img src = "https://a0.muscache.com/im/pictures/bd544e3f-31f3-4d17-a339-373620b4037a.jpg?aki_policy=large"/>
-				<div class = "best_name">
-					<div class = "home_score">
-						<img src = ""/>
-						<span>4.5</span>
-					</div>
-					<div class = "home_address">베스트 1 큰 주소</div>
-					<div class = "home_name">베스트 1 이름</div>
-					<div class = "home_price">베스트 1 가격</div>
-				</div>
-			</div>
-		</div>
-	</div>
+		<img src = "./img/icon/loading.gif" id = "loading"/>
+	</div><!-- best homes close -->
 </div>
   <%@include file = "./WEB-INF/user/signup.jsp" %>
   <%@include file = "./WEB-INF/user/signin.jsp" %>
+  <%@include file="./js/main_js.jsp" %>
 </body>
 </html>

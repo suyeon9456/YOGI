@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>YOGI_header</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
-<!-- <link href = '../css/header.css' type = 'text/css' rel = 'stylesheet'/> -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <style type="text/css">
     <%@include file="../css/header.css" %>
 </style> 
@@ -25,7 +25,9 @@
 			<div id = "search_box">
 				<div id = "search_div">
 					<input type="search" onkeypress="if( event.keyCode==13 ){searchEnter();}" name = "findStr" placeholder="원하는 숙소를 검색하세요." value = "${param.findStr }"/> 
-<!-- 					<img src=""/> -->
+					<div class = "search_btn" onclick = "searchEnter();">
+						<img src="../img/icon/search.png"/>
+					</div>
 				</div>
 			</div>
 			
@@ -129,7 +131,7 @@
 			</c:choose>
 		
 		</div>
-		
+		<%@include file="./WEB-INF/filter/calendar.jsp" %>
 		<%@include file="./WEB-INF/filter/type.jsp" %>
 		<%@include file="./WEB-INF/filter/guest.jsp" %>
 		<%@include file="./WEB-INF/filter/price.jsp" %>
@@ -153,6 +155,21 @@
 </form>
 <%@include file = "./WEB-INF/user/signup.jsp" %>
 <%@include file = "./WEB-INF/user/signin.jsp" %>
+<script type="text/javascript">
+function goCalendar(){
+	$.ajax({
+		url:"gocal",
+		type:"post",
+		dataType:"text",
+		success:function(data, status){
+			
+		},
+		error:function(request,status,error){
+	         alert("code = "+ request.status + " message = " + request.responseText + " error = " + error); // 실패 시 처리
+        }
+	});
+}
+</script>
 <script src = "../js/header.js"></script>
 </body>
 </html>
