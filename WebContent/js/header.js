@@ -55,30 +55,36 @@ function searchEnter (){
 //filter 버튼들 클릭 시
 function filterBtnsClick(num){
 	if(num == 1){
-		guest.style.display = "inline-block";
+		cal.style.display = "inline-block";
+		guest.style.display = "none";
 		type.style.display = "none";
 		price.style.display = "none";
 		filterPlus.style.display = "none";
+		goCalendar();
 	}else if(num == 2){
 		type.style.display = "inline-block";
 		guest.style.display = "none";
 		price.style.display = "none";
 		filterPlus.style.display = "none";
+		cal.style.display = "none";
 	}else if(num == 3){
 		guest.style.display = "inline-block";
 		type.style.display = "none";
 		price.style.display = "none";
 		filterPlus.style.display = "none";
+		cal.style.display = "none";
 	}else if(num == 4){
 		guest.style.display = "none";
 		type.style.display = "none";
 		price.style.display = "inline-block";
 		filterPlus.style.display = "none";
+		cal.style.display = "none";
 	}else{
 		guest.style.display = "none";
 		type.style.display = "none";
 		price.style.display = "none";
 		filterPlus.style.display = "inline-block";
+		cal.style.display = "none";
 	}
 }
 
