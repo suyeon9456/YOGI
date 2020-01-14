@@ -178,7 +178,7 @@ a{
 	border-radius: 10px 10px;
 	width:90%;
 	height:400px;
-	background-image: url("../img/main/banner4.jpg");
+	background-image: url("../img/main/test2.jpg");
 	background-repeat:no-repeat;
 	background-size:cover;
 	text-align: center;
@@ -202,6 +202,7 @@ a{
 #main_content #find_house #banner_box #banner_title{
 	font-weight:bold;
 	color:#5A4F3F;
+	color:#fff;
 	font-size:30px;
 }
 
@@ -269,28 +270,169 @@ a{
 }
 
 #main_content #best_homes{
-	width: 90%;
+	width:90%;
 	margin:0 auto;
-	text-align: center;
-}
-
-#main_content #best_homes #homes_btns{
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	align-content: space-between;
-	
+	align-content: space-around;
 }
 
-#main_content #best_homes #homes_btns .best_box{
-	width: 435px;
-}
-#main_content #best_homes #homes_btns .best_box img{
-	width: inherit;
-	border-radius: 10px;
+#main_content .b_cont{
+	margin-bottom: 30px;
 }
 
-#main_content #best_homes #homes_btns .best_box .best_name{
-	
+#main_content .b_slide_wrap { 
+	position: relative;
+	width: 410px;
+	margin: auto;
+	margin-bottom: 10px;
 }
+#main_content .b_slide_box { 
+	width: 100%; 
+	margin: auto; 
+	overflow-x: hidden; 
+}
+#main_content .b_slide_content { 
+	display: table; 
+	float: left; 
+	width: 409.6px; 
+}
+
+#main_content .b_slide_content img{
+	width: 100%;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+#main_content .b_slide_btn_p{
+	position: absolute !important;
+    display: block !important;
+    top: 50% !important;
+    pointer-events: auto !important;
+    transform: translateY(-50%) !important;
+    left: 8px !important;
+}
+
+#main_content .b_slide_btn_n{
+    position: absolute !important;
+    display: block !important;
+    top: 50% !important;
+    pointer-events: auto !important;
+    transform: translateY(-50%) !important;
+    right: 8px !important;
+}
+
+#main_content button{
+	-webkit-box-pack: center !important;
+    -webkit-box-align: center !important;
+    -webkit-appearance: none !important;
+    display: inline-block;
+    color: rgb(34, 34, 34) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    cursor: pointer !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-clip: padding-box !important;
+    box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 1px 2px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    border-image: initial !important;
+    outline: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    transition: box-shadow 0.2s ease 0s, -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
+	line-height: 15px;
+}
+
+#main_content button>img{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+}
+
+#main_content .b_slide_pagination_box{
+	position: absolute !important;
+	margin: 0 auto;
+	text-align: center;
+    left: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    margin-bottom:5px;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%) !important;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#main_content .b_slide_pagination{
+	overflow:hidden;
+	padding:0;
+	display:inline-block;
+	margin: 0 auto;
+	list-style: none;
+}
+
+#main_content .b_slide_pagination li{
+	float: left;
+    margin: 10px 5px;
+	background-color: rgba(255, 255, 255, 0.9) !important;
+	height:4px;
+	width: 4px;
+	border-radius: 50%;
+	border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.09);
+    box-sizing: border-box;
+}
+
+#main_content .b_dot_active{
+	border-style: solid !important;
+    border-width: 2px !important;
+    border-color: rgba(0, 0, 0, 0.09) !important;
+}
+
+#main_content .b_h_content_box{
+	text-align: left;
+	font-size: 13px;
+	color: #484848;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#main_content .b_h_content_tit{
+	overflow: hidden;
+}
+
+#main_content .b_h_name{
+	display:inline-block;
+	width:85%;
+	font-size: 14px;
+	color: rgb(113, 113, 113);
+	margin-bottom: 10px;
+	float: left;
+}
+
+#main_content .b_h_grade{
+	display: inline-block;
+	width: 15%;
+	font-size: 13px;
+	margin-bottom: 10px;
+	line-height: 16px;
+	overflow: hidden;
+	text-align: right;
+}
+
+#main_content .b_h_grade>img{
+	float: left;	
+	margin-right: 5px;
+}
+
+#main_content #loading{
+	margin:0 auto;
+}
+
 

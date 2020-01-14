@@ -32,21 +32,35 @@ body{
 }
 
 #header #main_box #search_div{
+	min-width:412px;
+	max-width:460px;
 	width: 90%;	
 	height: 34px;
 	border:1px solid #ccc;
 	line-height: 34px;
+	overflow: hidden;
 }
 
 #header #main_box #search_div>input{
-	width:85%;
+	width:90%;
 	margin-left:10px;	
 	border:0;
+	float: left;
+	height: 34px;
 }
 
-#header #main_box #search_div img{
-	width:5%;	
-	border:1px solid;
+#header .search_btn{
+	display:inline-block;
+	height: inherit;
+	width: 5%;
+	cursor:pointer;
+	line-height: 20px;	
+}
+
+#header .search_btn>img{
+	vertical-align: middle;
+	width: 20px;
+	height: 20x;
 }
 
 #header #main_box #menu_box{
@@ -55,12 +69,8 @@ body{
 	vertical-align: middle;
 	color: #484848;
 	font-weight: bold;
+	padding-right:25px;
 }
-
-/* #header #main_box #menu_box #menu_box_in{ */
-/* 	margin:0 auto; */
-	
-/* } */
 
 #header #main_box #menu_box ul{
 	display:inline-block;
@@ -131,6 +141,14 @@ body{
 
 #header #price{
 	display: none;
+	position: absolute;
+	top:130px;
+	left:292px;
+	z-index: 999;
+}
+
+#header #calendar{
+/* 	display: none; */
 	position: absolute;
 	top:130px;
 	left:292px;
