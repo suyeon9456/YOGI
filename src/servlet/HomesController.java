@@ -2,13 +2,21 @@ package servlet;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.JsonObject;
+
+import Calendar.Cal;
 import bean.DetailsVo;
 import bean.HomesDao;
 import bean.HomesVo;
@@ -19,6 +27,8 @@ import bean.SearchVo;
 public class HomesController {
 	
 	HomesDao dao;
+	
+	Cal cal;
 	
 	public HomesController() {
 		this.dao = new HomesDao();
@@ -100,4 +110,46 @@ public class HomesController {
 		mv.addObject("data", vo);
 		return mv;			
 	}
+	
+	@RequestMapping(value = "/city")
+	public ModelAndView citySearch() {
+		ModelAndView mv = new ModelAndView();
+		List<HomesVo> vo = new ArrayList<HomesVo>();
+		
+		mv.setViewName("homes/city_list");
+		
+		return mv;
+	}
+	
+	@RequestMapping(value = "/best", produces="application/text; charset=utf-8")
+	public String BestHome() {
+		String jsn = "";
+		
+		List<HomesVo> list = dao.goHomes();
+		List<HomesVo> bestList = new ArrayList<HomesVo>();
+		
+		for(int i = 0; i < 3; i++) {
+			bestList.add(list.get(i));
+		}
+		
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			jsn = mapper.writeValueAsString(bestList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return jsn;
+	} 
+	
+	@RequestMapping(value = "/gocal")
+	public String goCal() {
+		String str = "dd";
+		
+		String[] calData = new String[42];
+		calData = cal.showCalendar("2019 11");
+		
+		return str;
+	}
+	
 }
